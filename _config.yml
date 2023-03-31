@@ -21,9 +21,11 @@ footer:
     - name: Email
       value: xufeng.zhang@inria.fr
       link: mailto:xufeng.zhang@inria.fr
-    - name: WeChat
-      value: hsufengchang
-      link: "#"
+    - name: LinkedIn
+      link: https://www.linkedin.com/in/xufeng-zhang-177045193/
+#    - name: WeChat
+#      value: hsufengchang
+#      link: "#"
 #  follow:
 #    - name: Twitter
 #     link: http://twitter.com/YourTwitterUsername
