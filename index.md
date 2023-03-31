@@ -5,7 +5,7 @@ profile_picture:
   alt: website picture
 ---
 
-<h3 id="currant-position-">Currant Position:</h3>
+<h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Intern Student at Inria Sopiha Antipolis, France</p>
 <h3 id="education-">Education:</h3>
