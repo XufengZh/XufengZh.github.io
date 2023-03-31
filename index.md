@@ -11,10 +11,10 @@ profile_picture:
 <h3 id="education-">Education:</h3>
 <hr>
 <ul>
-<li>MSc in  Data Science, Sapienza University of Rome, 2023.</li>
+<li>MSc in  Data Science, Sapienza University of Rome, 2023</li>
 <li>BSc in Macromolecular Materials and Engineering, Zhejiang University, China, 2021</li>
 <li>BSc in Economics (Double Degree), Zhejiang University, China, 2021</li>
 </ul>
 
 <br />
-<p>More details are available in my <a href="http://www.baidu.com">CV</a>.</p>
+<p>More details are available in my <a href="[http://www.baidu.com](https://drive.google.com/file/d/1t_0T5RAJ9iJSCfaEC1S-i_v_A5PgdOaU/view?usp=sharing)">CV</a>.</p>
