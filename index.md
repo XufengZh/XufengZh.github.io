@@ -17,5 +17,4 @@ profile_picture:
 </ul>
 
 <br />
-<br />
 <p>More details are available in my <a href="http://www.baidu.com">CV</a>.</p>
