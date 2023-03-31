@@ -17,4 +17,4 @@ profile_picture:
 </ul>
 
 <br />
-<p>More details are available in my <a href="http://www.baidu.com](https://drive.google.com/file/d/1t_0T5RAJ9iJSCfaEC1S-i_v_A5PgdOaU/view?usp=sharing">CV</a>.</p>
+<p>More details are available in my <a href="https://drive.google.com/file/d/1t_0T5RAJ9iJSCfaEC1S-i_v_A5PgdOaU/view?usp=sharing">CV</a>.</p>
