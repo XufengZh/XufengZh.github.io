@@ -27,7 +27,8 @@
       </div>
 
       <div class="footer-col footer-col-2">
-        <h4>FOLLOW</h4>
+        <h4></h4>
+        <!-- we can add FOLLOW between h4 above -->
 
         <div class="social-links follow-links">
           {% for follow in site.footer.follow %}
@@ -51,7 +52,7 @@
         </div>
       </div>
 
-      {% if site.footer.show_powered_by == true %}
+      {% if site.footer.show_powered_by == false %}
         <div class="footer-col footer-col-3 powered-by">
           <p>
             powered by <a href="https://github.com/eliottvincent/bay">Bay</a> | {{ 'now' | date: "%Y" }}
