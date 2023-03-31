@@ -2,8 +2,8 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 title: Xufeng Zhang
-description: >- This is the personal page of Xufeng Zhang. Powered by Bay theme.
-baseurl: "/bay" # the subpath of the site
+#description: >- This is the personal page of Xufeng Zhang. Powered by Bay theme.
+#baseurl: "/bay" # the subpath of the site
 #url: "https://eliottvincent.github.io" # the base hostname & protocol for the site
 og_image: /assets/img/profile-pic.jpg
 google_analytics: "UA-121636368-3"
