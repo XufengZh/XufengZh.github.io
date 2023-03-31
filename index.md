@@ -5,10 +5,12 @@ profile_picture:
   alt: website picture
 ---
 
-<p>
-  Welcome! This site serves as an example for the Bay Jekyll theme. Bay is a very simple and minimal theme, directly inspired by Dan Grover's <a href="http://dangrover.com">website</a>.
-</p>
-
-<p>
-  You can find the source code and the instructions on <a href="https://github.com/eliottvincent/bay">GitHub</a>.
-</p>
+<h3 id="currant-position-">Currant Position:</h3>
+<hr>
+<p>Intern Student at Inria Sopiha Antipolis, France</p>
+<h3 id="education-">Education:</h3>
+<hr>
+<p>MSc in  Data Science, Sapienza University of Rome, 2023.</p>
+<p>BSc in Macromolecular Materials and Engineering, Zhejiang University, China, 2021</p>
+<p>BSc in Economics (Double Degree), Zhejiang University, China, 2021</p>
+<p>More details are available in my <a href="http://www.baidu.com">CV</a>.</p>
