@@ -141,9 +141,8 @@
 }
 
 .powered-by {
-  font-size: 12px !important;
+  font-size: 11px !important;
   color: $grey-color;
-  margin: 1px;
 }
 
 @include media-query($on-mobile) {
