@@ -14,14 +14,11 @@
           <p class="blog-post-list">
             {% for sf in site.subfiles %}
 
-              {% if sf.draft != true %}
                 <span class="blog-post-date">{{ sf.date | date: "%-m/%-d/%y" }}</span>
                 <a href="{{ sf.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
                   {{ sf.title }}
                 </a>
                 <br />
-
-              {% endif %}
 
             {% endfor %}
           </p>
