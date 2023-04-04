@@ -7,10 +7,10 @@
 
     <div class="page-content">
       <div class="wrapper">
-          {% for subfiles in site.subfiles %}
+          {% for subfile in site.subfiles %}
            {{subfile.num}}
               <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}">
-                {{ subfiles.title }}
+                {{ subfile.title }}
               </a>
               <br />
           {% endfor %}
