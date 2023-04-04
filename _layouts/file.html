@@ -7,9 +7,8 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <p class="blog-post-list">
           {% for subfiles in site.subfiles %}
-           <span class="blog-post-date">{{ subfile.num}}</span>
+           {{subfile.num}}
               <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}">
                 {{ subfiles.title }}
               </a>
