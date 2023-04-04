@@ -8,7 +8,7 @@
     <div class="page-content">
       <div class="wrapper">
           {% for subfile in site.subfiles %}
-           {{subfile.num}}
+              {{subfile.num}}
               <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}">
                 {{ subfile.title }}
               </a>
