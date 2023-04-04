@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    div class="page-content">
+      <div class="wrapper">
+        <p class="blog-post-list">
+          {% for subfiles in site.subfiles %}
+           <span class="blog-post-date">{{ subfile.num}}</span>
+              <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
+                {{ subfiles.title }}
+              </a>
+              <br />
+      
+      </div>
+      {{content}}
+    </div>
+    
+    {% include footer.html %}
+    
+    {% include foot.html %}
+  </body>
+</html>
