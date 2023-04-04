@@ -1,7 +1,7 @@
 ---
 layout: work
 title: Work
-slug: /_NA_work
+slug: /work
 items:
   - title: INRIA, France, 03.2023 - Now
     image:
