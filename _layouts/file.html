@@ -5,19 +5,18 @@
   <body>
     {% include header.html %}
 
-    div class="page-content">
+    <div class="page-content">
       <div class="wrapper">
         <p class="blog-post-list">
           {% for subfiles in site.subfiles %}
            <span class="blog-post-date">{{ subfile.num}}</span>
-              <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
+              <a href="{{ subfile.url | replace:".html","" | prepend: site.baseurl }}">
                 {{ subfiles.title }}
               </a>
               <br />
           {% endfor %}
-      
+          {{content}}
       </div>
-      {{content}}
     </div>
     
     {% include footer.html %}
