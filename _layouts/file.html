@@ -10,17 +10,6 @@
         <div class="blog">
           <h1 class="page-heading">{{ page.title }}</h1>
           {{ content }}
-
-          <p class="blog-post-list">
-            {% for sf in site.post %}
-
-                <span class="blog-post-date">{{ sf.date | date: "%-m/%-d/%y" }}</span>
-                <a href="{{ sf.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
-                  {{ sf.title }}
-                </a>
-                <br />
-
-            {% endfor %}
           </p>
         </div>
       </div>
