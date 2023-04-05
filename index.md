@@ -17,5 +17,5 @@ profile_picture:
 </ul>
 
 <br />
-<p>More details are available in my <a href="/assets/pdf/cv/xufeng_cv.json
+<p>More details are available in my <a href="/assets/htmls/cvunavaliable
 ">CV</a>.</p>
