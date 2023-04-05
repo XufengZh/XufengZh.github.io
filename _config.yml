@@ -12,6 +12,7 @@ header:
   pages:
     - name: Home
       slug: /
+    - name: File
 #    - name: Work
 #    - name: Blog
 
