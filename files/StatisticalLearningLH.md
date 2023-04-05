@@ -27,4 +27,4 @@ title:  "Files"
 <p>20.  <a href="https://docs.google.com/presentation/d/1tqpAwo-h-KMaETD2WWN9KAfVXU-zqx4-/edit?usp=share_link&ouid=113281523188892015577&rtpof=true&sd=true">无监督学习方法总结</a>.</p>
 
 <br />
-<p> If you have questions about the above resources, please contact me. Email: <a href:" mailto:mail@xufeng.de">mail@xufeng.de</a></p>
+<p> If you have questions about the above resources, please contact me. Email: <a href=" mailto:mail@xufeng.de">mail@xufeng.de</a></p>

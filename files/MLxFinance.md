@@ -17,4 +17,4 @@ title:  "Files"
 <p>11.  <a href="https://1drv.ms/b/s!Aj5Wzf1H1zZIgcdDvo5zyBySn0umVg?e=zMz5RR">Building ML Products in Insurance/Finance</a>.</p>
 
 <br />
-<p> If you have questions about the above resources, please contact me. Email: <a href:" mailto:mail@xufeng.de">mail@xufeng.de</a></p>
+<p> If you have questions about the above resources, please contact me. Email: <a href=" mailto:mail@xufeng.de">mail@xufeng.de</a></p>
