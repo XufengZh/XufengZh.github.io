@@ -1,5 +1,5 @@
 ---
-slug: /404.html
+slug: /cv.html
 title: CV
 layout: defaultCV
 ---
@@ -18,17 +18,17 @@ layout: defaultCV
 
 ## Summer School and Exchange
 <hr>
-**Università della Svizzera italiana**, 2022 Fall Exchange
-<li>Erasmus Exchange in Faculty of Informatics</li><br />
+**Università della Svizzera italiana**, 2022 Fall Exchange<br />
+<li>Erasmus Exchange in Faculty of Informatics</li>
 
-**University of Jyväskylä**, 2021 Summer School
-<li>Stochastic Optimization & Multicriteria Optimization</li><br />
+**University of Jyväskylä**, 2021 Summer School<br />
+<li>Stochastic Optimization & Multicriteria Optimization</li>
 
-**Osaka University**, 2021 Spring Exchange
-<li>Intelligence and Learning</li><br />
+**Osaka University**, 2021 Spring Exchange<br />
+<li>Intelligence and Learning</li>
 
-**National Yang-Ming University**, 2020 Summer School
-<li>Microbial Biotechnology and Drug Discovery Program</li><br />
+**National Yang-Ming University**, 2020 Summer School<br />
+<li>Microbial Biotechnology and Drug Discovery Program</li>
 
 ## Projects
 <hr>
