@@ -18,7 +18,7 @@ layout: defaultCV
 
 ## Summer School and Exchange
 <hr>
-<strong>Università della Svizzera italiana</strong>, 2022 Fall Exchange<br />
+<p><strong>Università della Svizzera italiana</strong>, 2022 Fall Exchange<br />
 Erasmus Exchange in Faculty of Informatics</p>
 <p><strong>University of Jyväskylä</strong>, 2021 Summer School
 <br />Stochastic Optimization &amp; Multicriteria Optimization</p>
