@@ -17,5 +17,5 @@ profile_picture:
 </ul>
 
 <br />
-<p>More details are available in my <a href="/assets/htmls/cvunavaliable
+<p>More details are available in my <a href="/assets/htmls/CV
 ">CV</a>.</p>
