@@ -1,9 +1,11 @@
 ---
 slug: /404.html
+title: CV
 layout: defaultCV
 ---
+Email: xufeng.zhang@inria.fr, mail@xufeng.de
 
-### Education 
+## Education 
 
 **Sapienza University of Rome**, Sept 2021 - Now
 
@@ -14,7 +16,7 @@ layout: defaultCV
 - B.S. in Macromolecular Materials and Engineering
 - B.S. in Economics (Dual Degree)
 
-### Summer School and Exchange
+## Summer School and Exchange
 
 Erasmus Exchange in Faculty of Informatics, USI, 2022 Fall Exchange
 
@@ -24,7 +26,7 @@ Intelligence and Learning, Osaka University, 2021 Spring Exchange
 
 Microbial Biotechnology and Drug Discovery Program, National Yang-Ming University, 2020 Summer School
 
-### Projects
+## Projects
 
 **Online Caching Optimization**, Inria, Mar 2023 - Now
 
@@ -34,17 +36,17 @@ Microbial Biotechnology and Drug Discovery Program, National Yang-Ming Universit
 
 **Photothermal Effect of Polypropylene Membrane on Desalination**, Zhejiang University, Mar 2020 - Sept 2020
 
-**Financial Default Risk Monitoring**, Shanghai JIaotong University, Aug 2019 - Sept 2019
+**Financial Default Risk Monitoring**, Shanghai Jiaotong University, Aug 2019 - Sept 2019
 
 **Pricing Mechanism of Group Buying Platform**, Zhejiang University, Apr 2019 - May 2020
 
-### Work Experience
+## Work Experience
 
 **Data Analysis Internship**, LundBeck, Sept 2021 - Dec 2021
 
 **Industrial Research Internship**, Shengang Securities, Dec 2019 - Mar 2020
 
-### Technical Skills & Tools
+## Technical Skills & Tools
 
 **Programming Languages**: Python, R, C
 
