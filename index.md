@@ -17,5 +17,5 @@ profile_picture:
 </ul>
 
 <br />
-<p>More details are available in my <a href="/assets/CvAssets/CV.md
+<p>More details are available in my <a href="/assets/CvAssets/CV
 ">CV</a>.</p>
