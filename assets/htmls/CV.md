@@ -6,7 +6,7 @@ layout: defaultCV
 Email: xufeng.zhang@inria.fr, mail@xufeng.de
 
 ## Education 
-
+<hr>
 **Sapienza University of Rome**, Sept 2021 - Now
 
 - Laurea Magistrale in Data Science
@@ -17,7 +17,7 @@ Email: xufeng.zhang@inria.fr, mail@xufeng.de
 - B.S. in Economics (Dual Degree)
 
 ## Summer School and Exchange
-
+<hr>
 Erasmus Exchange in Faculty of Informatics, USI, 2022 Fall Exchange
 
 Stochastic Optimization & Multicriteria Optimization, JYU, 2021 Summer School
@@ -27,7 +27,7 @@ Intelligence and Learning, Osaka University, 2021 Spring Exchange
 Microbial Biotechnology and Drug Discovery Program, National Yang-Ming University, 2020 Summer School
 
 ## Projects
-
+<hr>
 **Online Caching Optimization**, Inria, Mar 2023 - Now
 
 **Driving Business Decisions through AI**, Poste Italiane,  Jul 2022 - Jul 2022
@@ -41,13 +41,13 @@ Microbial Biotechnology and Drug Discovery Program, National Yang-Ming Universit
 **Pricing Mechanism of Group Buying Platform**, Zhejiang University, Apr 2019 - May 2020
 
 ## Work Experience
-
+<hr>
 **Data Analysis Internship**, LundBeck, Sept 2021 - Dec 2021
 
 **Industrial Research Internship**, Shengang Securities, Dec 2019 - Mar 2020
 
 ## Technical Skills & Tools
-
+<hr>
 **Programming Languages**: Python, R, C
 
 **Data Analysis Tools**: NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn
