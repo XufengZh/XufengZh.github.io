@@ -19,16 +19,16 @@ layout: defaultCV
 ## Summer School and Exchange
 <hr>
 **Università della Svizzera italiana**, 2022 Fall Exchange
-<li>Erasmus Exchange in Faculty of Informatics</li>
+<li>Erasmus Exchange in Faculty of Informatics</li><br />
 
 **University of Jyväskylä**, 2021 Summer School
-<li>Stochastic Optimization & Multicriteria Optimization</li>
+<li>Stochastic Optimization & Multicriteria Optimization</li><br />
 
 **Osaka University**, 2021 Spring Exchange
-<li>Intelligence and Learning</li>
+<li>Intelligence and Learning</li><br />
 
 **National Yang-Ming University**, 2020 Summer School
-<li>Microbial Biotechnology and Drug Discovery Program</li>
+<li>Microbial Biotechnology and Drug Discovery Program</li><br />
 
 ## Projects
 <hr>
