@@ -3,7 +3,7 @@ slug: /404.html
 title: CV
 layout: defaultCV
 ---
-Email: xufeng.zhang@inria.fr, mail@xufeng.de
+**Email**: mail@xufeng.de
 
 ## Education 
 <hr>
@@ -18,13 +18,17 @@ Email: xufeng.zhang@inria.fr, mail@xufeng.de
 
 ## Summer School and Exchange
 <hr>
-Erasmus Exchange in Faculty of Informatics, USI, 2022 Fall Exchange
+**Università della Svizzera italiana**, 2022 Fall Exchange
+<li>Erasmus Exchange in Faculty of Informatics</li>
 
-Stochastic Optimization & Multicriteria Optimization, JYU, 2021 Summer School
+**University of Jyväskylä**, 2021 Summer School
+<li>Stochastic Optimization & Multicriteria Optimization</li>
 
-Intelligence and Learning, Osaka University, 2021 Spring Exchange
+**Osaka University**, 2021 Spring Exchange
+<li>Intelligence and Learning</li>
 
-Microbial Biotechnology and Drug Discovery Program, National Yang-Ming University, 2020 Summer School
+**National Yang-Ming University**, 2020 Summer School
+<li>Microbial Biotechnology and Drug Discovery Program</li>
 
 ## Projects
 <hr>
