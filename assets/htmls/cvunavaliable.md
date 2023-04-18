@@ -1,6 +1,6 @@
 ---
 slug: /404.html
-layout: default
+layout: defaultCV
 ---
 
 <div class="not-found-container">
