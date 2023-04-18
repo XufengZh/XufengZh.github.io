@@ -14,7 +14,7 @@ layout: defaultCV
 **Zhejiang University**, Sept 2016 - Jul 2021
 
 - B.S. in Macromolecular Materials and Engineering
-- B.S. in Economics (Dual Degree)
+- B.S. in Economics (Double Degree)
 
 ## Summer School and Exchange
 <hr>
