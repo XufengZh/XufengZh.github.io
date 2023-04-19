@@ -3,7 +3,7 @@ slug: /cv.html
 title: CV
 layout: defaultCV
 ---
-**Email**: mail@xufeng.de
+**Email**: <a href="mailto:mail@xufeng.de">mail@xufeng.de</a>
 
 ## Education 
 <hr>
