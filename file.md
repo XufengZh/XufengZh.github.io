@@ -9,4 +9,4 @@ Hi! Here are some of my collection of public resources. Hope these files can hel
 <p>3. <a href="https://xufeng.de/files/Bayesian">Bayesian Statistics</a>.</p>
 <p>4. <a href="https://xufeng.de/files/EcoStata">计量经济学及Stata应用</a>.</p>
 <p>5. <a href="https://xufeng.de/files/deeplearning">Deep Learning</a>.</p>
-
+<p>6. <a href="https://xufeng.de/files/cv_full_xufeng.pdf">CV</a>.</p>
