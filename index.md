@@ -8,6 +8,8 @@ profile_picture:
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Intern Student at Inria Sopiha Antipolis, France</p>
+<br />
+
 <h3 id="education-">Education:</h3>
 <hr>
 <ul>
