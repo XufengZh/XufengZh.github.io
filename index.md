@@ -8,14 +8,12 @@ profile_picture:
 <h3 id="contact-">Contact:</h3>
 <hr>
 <p>Email: xufeng.zhang@inria.fr</p>
-<br />
 <p>Location: 06560, Valbonne, France</p>
 <br />
 
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Intern Student at Inria Sopiha Antipolis, France</p>
-<br />
 <p>Topic: Online Caching</p>
 <br />
 
