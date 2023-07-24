@@ -5,17 +5,25 @@ profile_picture:
   alt: website picture
 ---
 
+<h3 id="contact-">Contact:</h3>
+<hr>
+<p>Email: xufeng.zhang@inria.fr</p>
+<br />
+<p>Location: 06560, Valbonne, France</p>
+<br />
+
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Intern Student at Inria Sopiha Antipolis, France</p>
 <br />
+<p>Topic: Online Caching</p>
+<br />
 
-<h3 id="education-">Education:</h3>
+<h3 id="news-">News:</h3>
 <hr>
 <ul>
-<li>MSc in  Data Science, Sapienza University of Rome, 2023</li>
-<li>BSc in Macromolecular Materials and Engineering, Zhejiang University, China, 2021</li>
-<li>BSc in Economics (Double Degree), Zhejiang University, China, 2021</li>
+<li>Mar 2023: I joined NEO as an intern for 6 months.</li>
+<li>Feb 2023: Completed an exchange program at USI.</li>
 </ul>
 
 <br />
