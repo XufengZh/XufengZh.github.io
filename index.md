@@ -21,7 +21,7 @@ profile_picture:
 <hr>
 <ul>
 <li>Mar 2023: I joined <a href="https://team.inria.fr/neo/">NEO</a> as an intern for 6 months.</li>
-<li>Feb 2023: Completed an exchange program at <a href="https://www.usi.ch">USI</a>.</li>
+<li>Feb 2023: Completed the exchange program at <a href="https://www.usi.ch">USI</a>.</li>
 </ul>
 
 <br />
