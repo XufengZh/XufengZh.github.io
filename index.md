@@ -14,7 +14,7 @@ profile_picture:
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Intern Student at Inria Sopiha Antipolis, France</p>
-<p>Topic: Online Caching</p>
+<p>Topic: Online Caching Optimization</p>
 <br />
 
 <h3 id="news-">News:</h3>
