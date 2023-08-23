@@ -7,13 +7,15 @@ profile_picture:
 
 <h3 id="contact-">Contact:</h3>
 <hr>
-<p>Email: <a href="mailto:xufeng.zhang@inria.fr">xufeng.zhang@inria.fr</a></p>
+<p>Email: <a href="mailto:xufeng@mail.de">xufeng@mail.de</a></p>
 <p>Location: 06560, Valbonne, France</p>
 <br />
 
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
-<p>Intern Student at Inria Sopiha Antipolis, France</p>
+Master student in Sapienza (data science), will graduate in October.
+
+～～Intern Student at Inria Sopiha Antipolis, France～～
 <p>Topic: Online Caching Optimization</p>
 <br />
 
