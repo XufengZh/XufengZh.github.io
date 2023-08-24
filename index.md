@@ -9,7 +9,7 @@ profile_picture:
 <hr>
 <p>Email: <a href="mailto:xufeng@mail.de">xufeng@mail.de</a></p>
 <p>您需要支付金额:<del>20</del> <ins>18</ins>元</p>
-<p><del>Location: <s>06560, Valbonne, France </del> "No fixed address. Email is better if needed."</p>
+<p><del>Location: 06560, Valbonne, France </del> "No fixed address. Email is better if needed."</p>
 <br />
 
 <h3 id="currant-position-">Current Position:</h3>
