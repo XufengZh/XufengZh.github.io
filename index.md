@@ -8,14 +8,13 @@ profile_picture:
 <h3 id="contact-">Contact:</h3>
 <hr>
 <p>Email: <a href="mailto:xufeng@mail.de">xufeng@mail.de</a></p>
-<p>Location: 06560, Valbonne, France</p>
+<p><s>Location: <s>06560, Valbonne, France</s> No fixed address. Email is better if needed.</p>
 <br />
 
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
-Master student in Sapienza (data science), will graduate in October.
-
-～～Intern Student at Inria Sopiha Antipolis, France～～
+<p>Master student in Sapienza (data science), will graduate in October.</p>
+<p><s>Intern Student at Inria Sopiha Antipolis, France. </s> End in August.</p>
 <p>Topic: Online Caching Optimization</p>
 <br />
 

@@ -7,7 +7,7 @@ layout: defaultCV
 
 ## Education 
 <hr>
-**Sapienza University of Rome**, Sept 2021 - Now
+**Sapienza University of Rome**, Sept 2021 - Oct 2023
 
 - Laurea Magistrale in Data Science
 
@@ -29,7 +29,7 @@ Erasmus Exchange in Faculty of Informatics</p>
 
 ## Projects
 <hr>
-**Online Caching Optimization**, Inria, Mar 2023 - Now
+**Online Caching Optimization**, Inria, Mar 2023 - Aug 2023
 
 **Driving Business Decisions through AI**, Poste Italiane,  Jul 2022 - Jul 2022
 
