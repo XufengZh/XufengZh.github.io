@@ -7,7 +7,7 @@ profile_picture:
 
 <h3 id="contact-">Contact:</h3>
 <hr>
-<p>Email: <a href="mailto:xufeng@mail.de">xufeng@mail.de</a></p>
+<p>Email: <a href="mailto:mail@xufeng.de">mail@xufeng.de</a></p>
 <p>Location: <del>06560, Valbonne, France </del> </p>
 <p>No fixed address now. Email is better if needed. </p>
 <br />
