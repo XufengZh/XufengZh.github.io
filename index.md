@@ -8,15 +8,15 @@ profile_picture:
 <h3 id="contact-">Contact:</h3>
 <hr>
 <p>Email: <a href="mailto:xufeng@mail.de">xufeng@mail.de</a></p>
-<p>您需要支付金额:<del>20</del> <ins>18</ins>元</p>
-<p><del>Location: 06560, Valbonne, France </del> "No fixed address. Email is better if needed."</p>
+<p>Location: <del>06560, Valbonne, France </del> </p>
+<p>No fixed address now. Email is better if needed. </p>
 <br />
 
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
-<p>Master student in Sapienza (data science), will graduate in October.</p>
+<p>Master student in Sapienza (Data Science), will graduate in October.</p>
 <p><del>Intern Student at Inria Sopiha Antipolis, France. </del> "End in August."</p>
-<p>Topic: Online Caching Optimization</p>
+<p>Thesis topic: Online Caching Optimization</p>
 <br />
 
 <h3 id="news-">News:</h3>
