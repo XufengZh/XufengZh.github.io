@@ -15,7 +15,7 @@ profile_picture:
 <h3 id="currant-position-">Current Position:</h3>
 <hr>
 <p>Master student in Sapienza (Data Science), will graduate in October.</p>
-<p><del>Intern Student at Inria Sopiha Antipolis, France. </del> "End in August."</p>
+<p><del>Intern Student at Inria Sopiha Antipolis, France. </del> End in August.</p>
 <p>Thesis topic: Online Caching Optimization</p>
 <br />
 
