@@ -8,15 +8,14 @@ This course provides a comprehensive overview of linear algebra, probability, an
 <img src="{{ "/teaching/math4ai/bg.png" | absolute_url }}" alt="bay" class="post-pic"/>
 
 ### Lecture 1: Linear Algebra
-Slides    Exercises    Solutions
+<p style="word-spacing:8px">Slides Exercises Solutions</p>
 
 ### Lecture 2: Probability and Statistics
-Slides    Exercises    Solutions
+<p style="word-spacing:8px">Slides Exercises Solutions</p>
 
 
 ### Lecture 3: Optimization
-Slides    Exercises    Solutions
-
+<p style="word-spacing:8px">Slides Exercises Solutions</p>
 
 ### Lecture 4: Applications
-Slides    Exercises    Solutions
+<p style="word-spacing:8px">Slides Exercises Solutions</p>
