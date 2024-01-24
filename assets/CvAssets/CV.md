@@ -9,7 +9,7 @@ layout: defaultCV
 <hr>
 **Université Côte d'Azur**, Dec 2023 - Now
 
-PhD in Computer Science
+- PhD in Computer Science
 
 **Sapienza University of Rome**, Sept 2021 - Oct 2023
 
