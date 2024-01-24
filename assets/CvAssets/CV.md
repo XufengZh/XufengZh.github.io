@@ -3,10 +3,13 @@ slug: /cv.html
 title: CV
 layout: defaultCV
 ---
-**Email**: <a href="mailto:mail@xufeng.de">mail@xufeng.de</a>
+**Email**: <a href="mailto:xufeng.zhang@inria.fr">xufeng.zhang@inria.fr</a>
 
 ## Education 
 <hr>
+**Université Côte d'Azur**, Dec 2023 - Now
+PhD in Computer Science
+
 **Sapienza University of Rome**, Sept 2021 - Oct 2023
 
 - Laurea Magistrale in Data Science
