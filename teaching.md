@@ -5,4 +5,4 @@ slug: /file
 ---
 <br />
 ### 2023-2024
-<p><a href="https://xufeng.de/teaching/UvAML">UvA ML (Example)</a>.</p>
+<p><a href="https://xufeng.de/teaching/math4ai">Mathematics for AI</a>.</p>
