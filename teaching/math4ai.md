@@ -17,4 +17,4 @@ This course provides a comprehensive overview of linear algebra, probability, an
 <p style="word-spacing:8px">Slides Exercises Solutions Lab</p>
 
 ### Lecture 4: Applications
-<p style="word-spacing:8px">Slides Exercises Solutions Lab</p>
+<p style="word-spacing:8px">Slides Lab</p>
