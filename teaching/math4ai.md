@@ -11,7 +11,7 @@ This course provides a comprehensive overview of linear algebra, probability, an
 <p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1FBSnvuvM9vPFnDDEd4S4jDHlCklh13o3/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1NybH869UFgvktLuiR06Tw9GiS6-Xg2n0/view?usp=sharing">Exercises</a> Solutions</p>
 
 ### Lecture 2: Probability and Statistics
-<p style="word-spacing:8px">Slides Exercises Solutions</p>
+<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1_Q342TrMWMLU1vgQvIr-ap6t-L2rUNGO/view?usp=sharing">Slides</a> Exercises Solutions</p>
 
 
 ### Lecture 3: Optimization
