@@ -14,8 +14,8 @@ This course provides a comprehensive overview of linear algebra, probability, an
 <p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1_Q342TrMWMLU1vgQvIr-ap6t-L2rUNGO/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1gYCVdbZDDNtNcejwvBRNY0dpZBVAOaWg/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1_PFvLVAiN4Rz-gmaWuKS5AkRHUMcWcJo/view?usp=sharing">Solutions</a></p>
 
 ### Lecture 3: Optimization
-<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1jDER3XiZZbtnFeeS72c-sB24Y21fE8wx/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1KwDQ0sWRSlFIp4Jomf5GrOwdJ8jOdBeX/view?usp=sharing">Exercises</a> Solutions <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
+<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1jDER3XiZZbtnFeeS72c-sB24Y21fE8wx/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1KwDQ0sWRSlFIp4Jomf5GrOwdJ8jOdBeX/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1Blsf_0pbbd8WOOZi-jklvmy0094m6q1y/view?usp=sharing">Solutions</a> <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
 
 ### Lecture 4: Applications
-<p style="word-spacing:8px">Slides Lab</p>
+<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1zVSGCfkiWAGLDTyGwJZekT6sxNDiGTu8/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1tmHp1-NBYoCni7Qf_PrRdGcw5ZRCqrd-/view?usp=sharing">Lab</a></p>
 
