@@ -7,6 +7,8 @@ This course provides a comprehensive overview of linear algebra, probability, an
 
 <img src="{{ "/teaching/math4ai/bg.png" | absolute_url }}" alt="bay" class="post-pic"/>
 
+2023-2024 Spring, <font color="#000F9F"> CentraleDigitalLab @LaPlateforme_</font>
+
 ### Lecture 1: Linear Algebra
 <p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1FBSnvuvM9vPFnDDEd4S4jDHlCklh13o3/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1NybH869UFgvktLuiR06Tw9GiS6-Xg2n0/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1MVGi05WgJDdgAbJqn_3_hqTBS9K3qOuq/view?usp=sharing">Solutions</a></p>
 
@@ -18,4 +20,6 @@ This course provides a comprehensive overview of linear algebra, probability, an
 
 ### Lecture 4: Applications
 <p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1zVSGCfkiWAGLDTyGwJZekT6sxNDiGTu8/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1tmHp1-NBYoCni7Qf_PrRdGcw5ZRCqrd-/view?usp=sharing">Lab</a></p>
+
+
 
