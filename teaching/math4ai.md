@@ -16,10 +16,10 @@ This course provides a comprehensive overview of linear algebra, probability, an
 <p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise2.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solutions2.pdf">Solutions</a></p>
 
 ### Lecture 3: Optimization
-<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture3.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise3.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solution3.pdf">Solutions</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lab3.ipynb">Lab</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture3.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise3.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solution3.pdf">Solutions</a> <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
 
 ### Lecture 4: Applications
-<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture4.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lab4.ipynb">Lab</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture4.pdf">Slides</a> <a href="https://drive.google.com/file/d/1tmHp1-NBYoCni7Qf_PrRdGcw5ZRCqrd-/view?usp=sharing">Lab</a></p>
 
 
 
