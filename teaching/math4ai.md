@@ -10,16 +10,16 @@ This course provides a comprehensive overview of linear algebra, probability, an
 2023-2024 Spring, <font color="#000F9F"> CentraleDigitalLab @LaPlateforme_</font>
 
 ### Lecture 1: Linear Algebra
-<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1FBSnvuvM9vPFnDDEd4S4jDHlCklh13o3/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1NybH869UFgvktLuiR06Tw9GiS6-Xg2n0/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1MVGi05WgJDdgAbJqn_3_hqTBS9K3qOuq/view?usp=sharing">Solutions</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture1.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise1.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solution1.pdf">Solutions</a></p>
 
 ### Lecture 2: Probability and Statistics
-<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1_Q342TrMWMLU1vgQvIr-ap6t-L2rUNGO/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1gYCVdbZDDNtNcejwvBRNY0dpZBVAOaWg/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1_PFvLVAiN4Rz-gmaWuKS5AkRHUMcWcJo/view?usp=sharing">Solutions</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise2.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solution2.pdf">Solutions</a></p>
 
 ### Lecture 3: Optimization
-<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1jDER3XiZZbtnFeeS72c-sB24Y21fE8wx/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1KwDQ0sWRSlFIp4Jomf5GrOwdJ8jOdBeX/view?usp=sharing">Exercises</a> <a href="https://drive.google.com/file/d/1Blsf_0pbbd8WOOZi-jklvmy0094m6q1y/view?usp=sharing">Solutions</a> <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture3.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/exercise3.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/solution3.pdf">Solutions</a> <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
 
 ### Lecture 4: Applications
-<p style="word-spacing:8px"><a href="https://drive.google.com/file/d/1zVSGCfkiWAGLDTyGwJZekT6sxNDiGTu8/view?usp=sharing">Slides</a> <a href="https://drive.google.com/file/d/1tmHp1-NBYoCni7Qf_PrRdGcw5ZRCqrd-/view?usp=sharing">Lab</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai/lecture4.pdf">Slides</a> <a href="https://drive.google.com/file/d/1tmHp1-NBYoCni7Qf_PrRdGcw5ZRCqrd-/view?usp=sharing">Lab</a></p>
 
 
 
