@@ -25,5 +25,5 @@ profile_picture:
 
 
 <br />
-<p>More details are available in my <a href="/assets/CvAssets/CV
+<p>More details are available in my <a href="/assets/CV
 ">CV</a>.</p>

@@ -9,9 +9,9 @@ layout: defaultCV
 <hr>
 **Université Côte d'Azur**, Dec 2023 - Now
 
-- PhD in Computer Science
+- PhD in Informatics
 
-**Sapienza University of Rome**, Sept 2021 - Oct 2023
+**Sapienza Università di Roma**, Sept 2021 - Oct 2023
 
 - Laurea Magistrale in Data Science
 
@@ -33,7 +33,7 @@ Erasmus Exchange in Faculty of Informatics</p>
 
 ## Projects
 <hr>
-**Online Caching Optimization**, Inria, Mar 2023 - Aug 2023
+**Online Caching Optimization with Predictions**, Inria, Mar 2023 - Aug 2023
 
 **Driving Business Decisions through AI**, Poste Italiane,  Jul 2022 - Jul 2022
 
