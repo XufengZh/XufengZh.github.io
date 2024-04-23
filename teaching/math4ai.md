@@ -5,7 +5,7 @@ title:  "Mathematics for AI"
 
 This course provides a comprehensive overview of linear algebra, probability, and optimization, emphasizing their applications in AI. Topics include matrix operations, factorization methods, probability theory, statistics, optimization techniques like gradient descent, and their practical implementation in Python. This course will conclude with some real-world applications.
 
-<img src="{{ "/teaching/math4ai/bg.png" | absolute_url }}" alt="bay" class="post-pic"/>
+<img src="{{ "/teaching/math4ai/bg2.png" | absolute_url }}" alt="bay" class="post-pic"/>
 
 2023-2024 Spring, <font color="#000F9F"> CentraleDigitalLab @LaPlateforme_</font>
 
