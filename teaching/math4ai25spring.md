@@ -10,13 +10,13 @@ This course provides a comprehensive overview of linear algebra, probability, an
 2024-2025 Spring, <font color="#000F9F"> CentraleDigitalLab @LaPlateforme_</font>
 
 ### Lecture 1: Linear Algebra
-<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/lecture1.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise1.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution1.pdf">Solutions</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/Lecture1.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise1.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution1.pdf">Solutions</a></p>
 
 ### Lecture 2: Probability and Statistics I
-<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise2.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution2.pdf">Solutions</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/Lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise2.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution2.pdf">Solutions</a></p>
 
 ### Lecture 3: Probability and Statistics II
-<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise3.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution3.pdf">Solutions</a></p>
+<p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/Lecture2.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise3.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution3.pdf">Solutions</a></p>
 
 ### Lecture 4: Time Series
 <p style="word-spacing:8px"><a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/lecture4.pdf">Slides</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/exercise4.pdf">Exercises</a> <a href="https://www-sop.inria.fr/members/Xufeng.Zhang/files/teaching/math4ai25spring/solution4.pdf">Solutions</a> <a href="https://drive.google.com/file/d/1Ya7sr4XcEvVWqG6_4muOU5tRKMGY8X1P/view?usp=sharing">Lab</a></p>
