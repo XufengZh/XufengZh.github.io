@@ -7,7 +7,7 @@ profile_picture:
 
 <h3 id="contact-">Contact:</h3>
 <hr>
-<p>Email: xufeng.zhang ‘at’ inria.fr</a></p>
+<p>Email: xufeng.zhang at inria.fr</p>
 <p>Location: 06560, Valbonne, France </p>
 <br />
 
