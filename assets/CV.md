@@ -51,16 +51,17 @@ layout: defaultCV
 </div>
 
 <style>
+/* === 基本结构 === */
 .cv-container {
   max-width: 850px;
   margin: 60px auto;
   padding: 0 20px;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  color: #1f2937;
+  color: #1e1e1e;
   line-height: 1.7;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* --- 卡片样式 --- */
+/* === 卡片布局 === */
 .cv-card {
   background: #fff;
   border-radius: 12px;
@@ -71,12 +72,13 @@ layout: defaultCV
 }
 
 .cv-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 标题与分隔线 --- */
+/* === 标题与分隔线 === */
 .cv-card h2 {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   color: #1f2937;
   font-size: 1.3em;
   font-weight: 700;
@@ -91,28 +93,30 @@ layout: defaultCV
   margin: 6px 0 16px;
 }
 
-/* --- 内容样式 --- */
+/* === 正文文字 === */
 .cv-card p {
   margin: 6px 0 14px;
-  color: #374151;
+  color: #222;
+  font-weight: 400;
 }
 
 .cv-card strong {
   color: #000;
+  font-weight: 600;
 }
 
+/* === 链接 === */
 a {
   color: #4b90e7;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
-
 a:hover {
   border-color: #4b90e7;
 }
 
-/* --- 顶部信息 --- */
+/* === 顶部 Email === */
 .cv-container > p:first-child {
   text-align: right;
   font-weight: 500;
@@ -120,5 +124,23 @@ a:hover {
   margin-bottom: 20px;
 }
 
+/* === 响应式优化 === */
+@media (max-width: 640px) {
+  .cv-container {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
 
+  .cv-card {
+    padding: 18px 20px;
+  }
+
+  .cv-card h2 {
+    font-size: 1.15em;
+  }
+
+  .cv-card p {
+    font-size: 0.95em;
+  }
+}
 </style>
