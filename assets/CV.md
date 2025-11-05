@@ -5,8 +5,6 @@ layout: defaultCV
 ---
 
 <div class="cv-container">
-  <p><strong>Email:</strong> xufeng.zhang at inria.fr</p>
-
   <div class="cv-card">
     <h2>Education</h2>
     <hr>
