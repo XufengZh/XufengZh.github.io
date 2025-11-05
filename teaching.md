@@ -53,7 +53,7 @@ slug: /file
   text-align: center;
   font-size: 1.9em;
   color: #222;
-  border-bottom: 3px solid #4f46e5;
+  border-bottom: 3px solid #4b90e7;
   display: inline-block;
   padding-bottom: 6px;
   margin-bottom: 40px;
@@ -77,7 +77,7 @@ slug: /file
   margin-top: 0;
   color: #1f2937;
   font-size: 1.3em;
-  border-left: 4px solid #4f46e5;
+  border-left: 4px solid #4b90e7;
   padding-left: 10px;
   margin-bottom: 12px;
 }

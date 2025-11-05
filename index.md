@@ -5,122 +5,72 @@ profile_picture:
   alt: website picture
 ---
 
-<div class="profile-section">
-  <div class="profile-header">
-    <img src="/assets/img/profile-pic.png" alt="Profile picture">
-  </div>
+<h3 class="section-title">Contact</h3>
+<hr>
+<p>Email: xufeng.zhang at inria.fr</p>
+<p>Location: 06560, Valbonne, France </p>
+<br />
 
-  <section>
-    <h3>Contact</h3>
-    <hr>
-    <p>Email: <a>xufeng.zhang at inria.fr</a></p>
-    <p>Location: 06560 Valbonne, France</p>
-  </section>
+<h3 class="section-title">Current Position</h3>
+<hr>
+<p>PhD Student at Inria Sophia Antipolis, NEO team</p>
+<p>Under the supervision of Giovanni Neglia and Sara Alouf.</p>
+<br />
 
-  <section>
-    <h3>Current Position</h3>
-    <hr>
-    <p>PhD Student at <strong>Inria Sophia Antipolis</strong>, NEO team.</p>
-    <p>Under the supervision of <strong>Giovanni Neglia</strong> and <strong>Sara Alouf</strong>.</p>
-  </section>
+<h3 class="section-title">Research Interests</h3>
+<hr>
+<p>Online Optimization</p>
+<p>Caching Policies</p>
+<br />
 
-  <section>
-    <h3>Research Interests</h3>
-    <hr>
-    <ul>
-      <li>Online Optimization</li>
-      <li>Caching Policies</li>
-    </ul>
-  </section>
-
-  <p class="cv-link">
-    More details are available in my <a href="/assets/CV">CV</a>.
-  </p>
-</div>
+<p>More details are available in my <a href="/assets/CV">CV</a>.</p>
 
 <style>
-.profile-section {
-  max-width: 760px;
-  margin: 60px auto;
-  padding: 0 20px;
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
-  color: #1f2937;
-}
-
-/* 顶部个人信息区 */
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.profile-header img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #4f46e5;
-}
-
-.profile-info h1 {
-  margin: 0;
-  font-size: 1.8em;
-  color: #111827;
-}
-
-.profile-info p {
-  margin: 4px 0;
-  color: #374151;
-}
-
-/* 各小节 */
-section {
-  margin-bottom: 40px;
-}
-
-section h3 {
+.section-title {
+  font-weight: 700;
   font-size: 1.2em;
-  font-weight: 600;
   color: #1f2937;
-  border-left: 4px solid #4f46e5;
+  border-left: 4px solid #4b90e7;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 8px;
 }
 
-section hr {
+hr {
   border: none;
   border-top: 1px solid #e5e7eb;
   margin: 6px 0 12px;
 }
 
-section p, section li {
+p {
   color: #374151;
-  margin: 4px 0;
+  line-height: 1.6;
 }
 
-ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.cv-link {
-  text-align: center;
-  font-weight: 500;
-  margin-top: 30px;
-}
-
-.cv-link a {
-  color: #4f46e5;
+a {
+  color: #4b90e7;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
 
-.cv-link a:hover {
-  border-color: #4f46e5;
+a:hover {
+  border-color: #4b90e7;
 }
 
-
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    color: #f3f4f6;
+    border-left-color: #a5c8f3;
+  }
+  hr {
+    border-top-color: #374151;
+  }
+  p {
+    color: #d1d5db;
+  }
+  a {
+    color: #a5c8f3;
+  }
+}
 </style>

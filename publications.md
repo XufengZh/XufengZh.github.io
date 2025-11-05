@@ -33,7 +33,7 @@ slug: /publications
   font-size: 1.9em;
   margin-bottom: 25px;
   color: #222;
-  border-bottom: 3px solid #4f46e5;
+  border-bottom: 3px solid #4b90e7;
   display: inline-block;
   padding-bottom: 6px;
 }
@@ -65,7 +65,7 @@ slug: /publications
 }
 
 .pub-item u {
-  text-decoration-color: #4f46e5;
+  text-decoration-color: #4b90e7;
   text-underline-offset: 3px;
 }
 
