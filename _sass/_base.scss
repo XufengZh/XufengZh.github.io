@@ -222,3 +222,40 @@ pre {
     }
   }
 }
+
+/* === 🌙 Global Dark Mode (prefers-color-scheme) === */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #0f172a;
+    color: #e5e7eb;
+  }
+
+  a {
+    color: #8cbcff;
+  }
+  a:hover {
+    color: lighten(#8cbcff, 5%);
+  }
+
+  hr {
+    border-top-color: #334155;
+  }
+
+  /* 卡片类通用容器样式 */
+  .cv-card, .pub-card, .teaching-year {
+    background-color: #1e293b;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  }
+
+  /* 主要标题字体变亮 */
+  h1, h2, h3, h4, h5 {
+    color: #f3f4f6;
+  }
+
+  /* 页眉页脚（如果有的话） */
+  header, footer {
+    background-color: #111827;
+    color: #e5e7eb;
+  }
+}
+
