@@ -78,7 +78,6 @@ layout: defaultCV
 
 /* === 标题与分隔线 === */
 .cv-card h2 {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   color: #1f2937;
   font-size: 1.3em;
   font-weight: 700;
