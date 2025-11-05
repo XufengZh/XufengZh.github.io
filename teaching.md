@@ -3,11 +3,130 @@ layout: file
 title: Teaching
 slug: /file
 ---
-<br />
-### 2025-2026
-<p>Machine Learning, 22h, Centrale Méditerranée</p>
-### 2024-2025
-<p>Mathematics for AI, 24h, Centrale Méditerranée</p>
-<p>Introduction to Research (TD), 20h, Polytech Nice Sophia</p>
-### 2023-2024
-<p>Mathematics for AI, 15h, Centrale Méditerranée</p>
+
+<div class="teaching-section">
+
+  <div class="teaching-year">
+    <h3>2025–2026</h3>
+    <ul>
+      <li>
+        <img src="/assets/img/cm.jpg" alt="CM icon">
+        <strong>Machine Learning</strong> — 22h, Centrale Méditerranée
+      </li>
+    </ul>
+  </div>
+
+  <div class="teaching-year">
+    <h3>2024–2025</h3>
+    <ul>
+      <li>
+        <img src="/assets/img/cm.jpg" alt="CM icon">
+        <strong>Mathematics for AI</strong> — 24h, Centrale Méditerranée
+      </li>
+      <li>
+        <img src="/assets/img/stn.jpg" alt="PNS icon">
+        <strong>Introduction to Research (TD)</strong> — 20h, Polytech Nice Sophia
+      </li>
+    </ul>
+  </div>
+
+  <div class="teaching-year">
+    <h3>2023–2024</h3>
+    <ul>
+      <li>
+        <img src="/assets/img/cm.jpg" alt="CM icon">
+        <strong>Mathematics for AI</strong> — 15h, Centrale Méditerranée
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+.teaching-section {
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: inherit;
+}
+
+.teaching-section h2 {
+  text-align: center;
+  font-size: 1.9em;
+  color: #222;
+  border-bottom: 3px solid #4f46e5;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 40px;
+}
+
+.teaching-year {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teaching-year:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.teaching-year h3 {
+  margin-top: 0;
+  color: #1f2937;
+  font-size: 1.3em;
+  border-left: 4px solid #4f46e5;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+
+.teaching-year ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.teaching-year li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.teaching-year img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.teaching-year strong {
+  color: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  .teaching-year {
+    background: #1f2937;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  .teaching-section h2 {
+    color: #e5e7eb;
+    border-color: #818cf8;
+  }
+  .teaching-year h3 {
+    color: #f3f4f6;
+    border-left-color: #818cf8;
+  }
+  .teaching-year li {
+    color: #d1d5db;
+  }
+  .teaching-year strong {
+    color: #f9fafb;
+  }
+}
+</style>

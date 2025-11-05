@@ -5,7 +5,7 @@ slug: /publications
 ---
 
 <div class="pub-section">
-  <h2>Publications</h2>
+  <!--<h2>Publications</h2>-->
 
   <div class="pub-item">
     <h3>Low-Complexity Online Learning for Caching</h3>
