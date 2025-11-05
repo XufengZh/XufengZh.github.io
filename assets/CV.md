@@ -1,62 +1,126 @@
 ---
 slug: /cv.html
-title: CV
+title: Xufeng-CV
 layout: defaultCV
 ---
-**Email**: xufeng.zhang at inria.fr
 
-## Education 
-<hr>
-**Université Côte d'Azur**, Dec 2023 - Now
+<div class="cv-container">
+  <p><strong>Email:</strong> xufeng.zhang at inria.fr</p>
 
-- PhD in Informatics
+  <div class="cv-card">
+    <h2>Education</h2>
+    <hr>
+    <p><strong>Université Côte d'Azur</strong>, Dec 2023 – Now<br>PhD in Informatics</p>
+    <p><strong>Sapienza Università di Roma</strong>, Sept 2021 – Oct 2023<br>Laurea Magistrale in Data Science</p>
+    <p><strong>Zhejiang University</strong>, Sept 2016 – Jul 2021<br>B.S. in Macromolecular Materials and Engineering<br>B.S. in Economics (Double Degree)</p>
+  </div>
 
-**Sapienza Università di Roma**, Sept 2021 - Oct 2023
+  <div class="cv-card">
+    <h2>Summer School and Exchange</h2>
+    <hr>
+    <p><strong>Università della Svizzera italiana</strong>, 2022 Fall Exchange<br>Erasmus Exchange in Faculty of Informatics</p>
+    <p><strong>University of Jyväskylä</strong>, 2021 Summer School<br>Stochastic Optimization & Multicriteria Optimization</p>
+    <p><strong>Osaka University</strong>, 2021 Spring Exchange<br>Intelligence and Learning</p>
+    <p><strong>National Yang-Ming University</strong>, 2020 Summer School<br>Microbial Biotechnology and Drug Discovery Program</p>
+  </div>
 
-- Laurea Magistrale in Data Science
+  <div class="cv-card">
+    <h2>Projects</h2>
+    <hr>
+    <p><strong>Online Caching Optimization with Predictions</strong>, Inria, Mar 2023 – Aug 2023</p>
+    <p><strong>Driving Business Decisions through AI</strong>, Poste Italiane, Jul 2022 – Jul 2022</p>
+    <p><strong>Impact of Land Finance on Government Policy</strong>, Zhejiang University, Sept 2020 – Jul 2021</p>
+    <p><strong>Photothermal Effect of Polypropylene Membrane on Desalination</strong>, Zhejiang University, Mar 2020 – Sept 2020</p>
+    <p><strong>Financial Default Risk Monitoring</strong>, Shanghai Jiaotong University, Aug 2019 – Sept 2019</p>
+    <p><strong>Pricing Mechanism of Group Buying Platform</strong>, Zhejiang University, Apr 2019 – May 2020</p>
+  </div>
 
-**Zhejiang University**, Sept 2016 - Jul 2021
+  <div class="cv-card">
+    <h2>Work Experience</h2>
+    <hr>
+    <p><strong>Data Analysis Internship</strong>, LundBeck, Sept 2021 – Dec 2021</p>
+    <p><strong>Industrial Research Internship</strong>, Shengang Securities, Dec 2019 – Mar 2020</p>
+  </div>
 
-- B.S. in Macromolecular Materials and Engineering
-- B.S. in Economics (Double Degree)
+  <div class="cv-card">
+    <h2>Technical Skills & Tools</h2>
+    <hr>
+    <p><strong>Programming Languages:</strong> Python, R, C</p>
+    <p><strong>Data Analysis Tools:</strong> NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn</p>
+    <p><strong>Statistical Analysis:</strong> Stata, R</p>
+    <p><strong>Database Management:</strong> SQL, MongoDB</p>
+  </div>
+</div>
 
-## Summer School and Exchange
-<hr>
-<p><strong>Università della Svizzera italiana</strong>, 2022 Fall Exchange<br />
-Erasmus Exchange in Faculty of Informatics</p>
-<p><strong>University of Jyväskylä</strong>, 2021 Summer School
-<br />Stochastic Optimization &amp; Multicriteria Optimization</p>
-<p><strong>Osaka University</strong>, 2021 Spring Exchange
-<br />Intelligence and Learning</p>
-<p><strong>National Yang-Ming University</strong>, 2020 Summer School
-<br />Microbial Biotechnology and Drug Discovery Program</p>
+<style>
+.cv-container {
+  max-width: 850px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #1f2937;
+  line-height: 1.7;
+}
 
-## Projects
-<hr>
-**Online Caching Optimization with Predictions**, Inria, Mar 2023 - Aug 2023
+/* --- 卡片样式 --- */
+.cv-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 22px 28px;
+  margin-bottom: 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-**Driving Business Decisions through AI**, Poste Italiane,  Jul 2022 - Jul 2022
+.cv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
 
-**Impact of Land Finance on Government Policy**, Zhejiang University, Sept 2020 - Jul 2021
+/* --- 标题与分隔线 --- */
+.cv-card h2 {
+  color: #1f2937;
+  font-size: 1.3em;
+  font-weight: 700;
+  border-left: 5px solid #4b90e7;
+  padding-left: 10px;
+  margin: 0 0 10px;
+}
 
-**Photothermal Effect of Polypropylene Membrane on Desalination**, Zhejiang University, Mar 2020 - Sept 2020
+.cv-card hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 6px 0 16px;
+}
 
-**Financial Default Risk Monitoring**, Shanghai Jiaotong University, Aug 2019 - Sept 2019
+/* --- 内容样式 --- */
+.cv-card p {
+  margin: 6px 0 14px;
+  color: #374151;
+}
 
-**Pricing Mechanism of Group Buying Platform**, Zhejiang University, Apr 2019 - May 2020
+.cv-card strong {
+  color: #000;
+}
 
-## Work Experience
-<hr>
-**Data Analysis Internship**, LundBeck, Sept 2021 - Dec 2021
+a {
+  color: #4b90e7;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
 
-**Industrial Research Internship**, Shengang Securities, Dec 2019 - Mar 2020
+a:hover {
+  border-color: #4b90e7;
+}
 
-## Technical Skills & Tools
-<hr>
-**Programming Languages**: Python, R, C
+/* --- 顶部信息 --- */
+.cv-container > p:first-child {
+  text-align: right;
+  font-weight: 500;
+  color: #4b90e7;
+  margin-bottom: 20px;
+}
 
-**Data Analysis Tools**: NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn
 
-**Statistical Analysis**: Stata, R
-
-**Database Management**: SQL, MongoDB
+</style>
