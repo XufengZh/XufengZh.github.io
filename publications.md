@@ -3,25 +3,24 @@ layout: publications
 title: Publications
 slug: /publications
 ---
-<!-- === Publications Section (Insert between header and footer) === -->
+
 <div class="pub-section">
   <h2>Publications</h2>
-
-  <div class="pub-item">
-    <h3>Memory-efficient Online Caching Policies with Regret Guarantees</h3>
-    <p><strong>Authors:</strong> <u>X. Zhang</u>, S. Alouf, G. Neglia</p>
-    <p><em>In IFIP NETWORKING 2025</em></p>
-  </div>
 
   <div class="pub-item">
     <h3>Low-Complexity Online Learning for Caching</h3>
     <p><strong>Authors:</strong> D. Carra, G. Neglia, <u>X. Zhang</u></p>
     <p><em>Computer Networks, 111743 (2025)</em></p>
   </div>
+
+  <div class="pub-item">
+    <h3>Memory-efficient Online Caching Policies with Regret Guarantees</h3>
+    <p><strong>Authors:</strong> <u>X. Zhang</u>, S. Alouf, G. Neglia</p>
+    <p><em>In IFIP NETWORKING 2025</em></p>
+  </div>
 </div>
 
 <style>
-/* === Scoped styles for publication section === */
 .pub-section {
   max-width: 720px;
   margin: 60px auto;
@@ -70,7 +69,6 @@ slug: /publications
   text-underline-offset: 3px;
 }
 
-/* Dark mode compatibility (optional) */
 @media (prefers-color-scheme: dark) {
   .pub-item {
     background: #1f2937;
