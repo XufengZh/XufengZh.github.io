@@ -58,7 +58,6 @@ layout: defaultCV
   padding: 0 20px;
   color: #1e1e1e;
   line-height: 1.7;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* === 卡片布局 === */
