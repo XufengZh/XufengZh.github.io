@@ -13,7 +13,7 @@ header:
     - name: Home
       slug: /
     - name: Teaching
-#    - name: Work
+    - name: Publications
 #    - name: Blog
 
 footer:
@@ -22,8 +22,8 @@ footer:
     - name: Email
       value: mail@xufeng.de
       link: mailto:mail@xufeng.de
-    - name: LinkedIn
-      link: https://www.linkedin.com/in/xufeng-zhang-177045193/
+#    - name: LinkedIn
+#      link: https://www.linkedin.com/in/xufeng-zhang-177045193/
 #    - name: WeChat
 #      value: hsufengchang
 #      link: "#"
