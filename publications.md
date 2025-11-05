@@ -69,23 +69,4 @@ slug: /publications
   text-underline-offset: 3px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .pub-item {
-    background: #1f2937;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  }
-  .pub-section h2 {
-    color: #e5e7eb;
-    border-color: #818cf8;
-  }
-  .pub-item h3 {
-    color: #f3f4f6;
-  }
-  .pub-item p {
-    color: #d1d5db;
-  }
-  .pub-item u {
-    text-decoration-color: #818cf8;
-  }
-}
 </style>

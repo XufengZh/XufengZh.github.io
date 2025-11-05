@@ -109,24 +109,4 @@ slug: /file
   color: #111827;
 }
 
-@media (prefers-color-scheme: dark) {
-  .teaching-year {
-    background: #1f2937;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  }
-  .teaching-section h2 {
-    color: #e5e7eb;
-    border-color: #818cf8;
-  }
-  .teaching-year h3 {
-    color: #f3f4f6;
-    border-left-color: #818cf8;
-  }
-  .teaching-year li {
-    color: #d1d5db;
-  }
-  .teaching-year strong {
-    color: #f9fafb;
-  }
-}
 </style>
