@@ -25,7 +25,7 @@ Emphasis is placed on practical aspects, such as the importance of feature engin
 ### Lecture 4: Unsupervised Learning
 <p style="word-spacing:8px"><a href="/teaching/ml/ML4.pdf">Slides</a> <a href="404">Exercises</a> <a href="404">Solutions</a> </p>
 
-### Lecture 5: Machine Learning Project with LLM
+### Lecture 5: Machine Learning Web Application with LLM
 <p style="word-spacing:8px"><a href="/teaching/ml/ml_ai_project.pdf">Project</a> <a href="404">Demo</a> </p>
 
 ### Lecture 6: Final Machine Learning Competition
