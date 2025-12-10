@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoML Lite - Local Machine Learning</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Babel for in-browser JSX compilation -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- Pyodide (Must be loaded globally) -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+
+  <!-- Import Map for ES Modules -->
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "recharts": "https://esm.sh/recharts@2.12.7?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.292.0?external=react",
+    "papaparse": "https://esm.sh/papaparse@5.4.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/"
+  }
+}
+</script>
+
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    
+    .fade-in { animation: fadeIn 0.5s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <div id="root"></div>
+
+  <!-- Main Application Script (ES Module) -->
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect, useRef } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import { 
+      ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+      BarChart, Bar, Legend, Cell
+    } from 'recharts';
+    import { 
+      Brain, Upload, Settings, Table, Play, BarChart2, Loader2, AlertTriangle, RefreshCcw, X, CheckCircle2, XCircle
+    } from 'lucide-react';
+    import Papa from 'papaparse';
+
+    // --- Constants ---
+    const TaskType = {
+      REGRESSION: 'Regression',
+      CLASSIFICATION: 'Classification'
+    };
+
+    const MLModel = {
+      LINEAR_REGRESSION: 'Linear Regression',
+      SVR: 'Support Vector Machine (SVR)',
+      DECISION_TREE_REG: 'Decision Tree Regressor',
+      LOGISTIC_REGRESSION: 'Logistic Regression',
+      SVC: 'Support Vector Machine (SVC)',
+      RANDOM_FOREST_CLF: 'Random Forest Classifier'
+    };
+
+    // --- Python Service ---
+    class PythonService {
+      constructor() {
+        this.pyodide = null;
+        this.isReady = false;
+      }
+
+      async init() {
+        if (this.isReady) return;
+
+        try {
+          console.log('Loading Pyodide...');
+          this.pyodide = await window.loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
+          });
+
+          console.log('Loading Python packages...');
+          await this.pyodide.loadPackage("micropip");
+          const micropip = this.pyodide.pyimport("micropip");
+          await micropip.install(["pandas", "scikit-learn"]);
+          
+          this.isReady = true;
+          console.log('Python Environment Ready');
+        } catch (error) {
+          console.error('Failed to initialize Python:', error);
+          throw error;
+        }
+      }
+
+      async getDescriptiveStats(csvContent, hasHeader) {
+        if (!this.isReady) throw new Error("Python not ready");
+
+        const headerArg = hasHeader ? 0 : 'None';
+        
+        const code = `
+import pandas as pd
+import io
+import json
+
+csv_content = ${JSON.stringify(csvContent)}
+result_json = ""
+try:
+    df = pd.read_csv(io.StringIO(csv_content), header=${headerArg})
+    
+    if ${!hasHeader ? 'True' : 'False'}:
+        df.columns = [str(i) for i in df.columns]
+
+    # Describe and convert to simpler dictionary structure for JSON
+    desc = df.describe(include='all')
+    
+    # Fill NaN with null for valid JSON
+    desc_json = desc.to_json(orient='columns')
+    
+    result_json = json.dumps({"description": json.loads(desc_json), "columns": list(df.columns)})
+except Exception as e:
+    result_json = json.dumps({"error": str(e)})
+
+result_json
+`;
+        const result = await this.pyodide.runPythonAsync(code);
+        return JSON.parse(result);
+      }
+
+      async runTraining(csvContent, hasHeader, targetCol, taskType, modelType) {
+        if (!this.isReady) throw new Error("Python not ready");
+
+        const modelMap = {
+            [MLModel.LINEAR_REGRESSION]: 'LinearRegression()',
+            [MLModel.SVR]: 'SVR()',
+            [MLModel.DECISION_TREE_REG]: 'DecisionTreeRegressor()',
+            [MLModel.LOGISTIC_REGRESSION]: 'LogisticRegression(max_iter=1000)',
+            [MLModel.SVC]: 'SVC()',
+            [MLModel.RANDOM_FOREST_CLF]: 'RandomForestClassifier()'
+        };
+
+        const pyModel = modelMap[modelType] || 'LinearRegression()';
+        const isReg = taskType === TaskType.REGRESSION;
+        const headerArg = hasHeader ? 0 : 'None';
+
+        const code = `
+import pandas as pd
+import numpy as np
+import io
+import json
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.svm import SVR, SVC
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import r2_score, mean_squared_error, accuracy_score, confusion_matrix
+
+result_obj = {}
+json_output = ""
+
+try:
+    # 1. Load Data
+    csv_content = ${JSON.stringify(csvContent)}
+    df = pd.read_csv(io.StringIO(csv_content), header=${headerArg})
+    
+    if ${!hasHeader ? 'True' : 'False'}:
+        df.columns = [str(i) for i in df.columns]
+
+    target = "${targetCol}"
+    
+    # 2. Preprocessing
+    df = df.dropna()
+    
+    if target not in df.columns:
+        raise Exception(f"Target column '{target}' not found.")
+
+    X = df.drop(columns=[target])
+    y = df[target]
+    
+    # One-Hot Encoding for categorical features
+    X = pd.get_dummies(X, drop_first=True)
+    
+    # 3. Train/Test Split (80/20)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
+    # 4. Model Training
+    model = ${pyModel}
+    model.fit(X_train, y_train)
+    
+    # 5. Prediction
+    y_pred = model.predict(X_test)
+    
+    # 6. Metrics & Packaging
+    predictions = []
+    y_test_list = y_test.tolist()
+    y_pred_list = y_pred.tolist()
+    
+    # Limit visualization data to 50 points
+    for i in range(min(50, len(y_test_list))):
+        predictions.append({"actual": y_test_list[i], "predicted": y_pred_list[i]})
+
+    if ${isReg ? 'True' : 'False'}:
+        r2 = r2_score(y_test, y_pred)
+        mse = mean_squared_error(y_test, y_pred)
+        result_obj = {
+            "r2": r2,
+            "mse": mse,
+            "predictions": predictions
+        }
+    else:
+        acc = accuracy_score(y_test, y_pred)
+        
+        # Confusion Matrix
+        labels = np.unique(y)
+        cm = confusion_matrix(y_test, y_pred, labels=labels)
+        
+        result_obj = {
+            "accuracy": acc,
+            "predictions": predictions,
+            "confusion_matrix": cm.tolist(),
+            "classes": labels.tolist()
+        }
+
+except Exception as e:
+    result_obj = {"error": str(e)}
+
+json_output = json.dumps(result_obj)
+json_output
+`;
+
+        const result = await this.pyodide.runPythonAsync(code);
+        const parsed = JSON.parse(result);
+        
+        if (parsed.error) {
+            throw new Error(parsed.error);
+        }
+        return parsed;
+      }
+    }
+
+    const pythonService = new PythonService();
+
+    // --- Components ---
+
+    const FileUpload = ({ onFileLoaded, onError }) => {
+      const fileInputRef = useRef(null);
+      const [isDragging, setIsDragging] = useState(false);
+
+      const handleFileChange = (e) => {
+        const file = e.target.files?.[0];
+        processFile(file);
+      };
+
+      const handleDragOver = (e) => {
+        e.preventDefault();
+        setIsDragging(true);
+      };
+
+      const handleDragLeave = (e) => {
+        e.preventDefault();
+        setIsDragging(false);
+      };
+
+      const handleDrop = (e) => {
+        e.preventDefault();
+        setIsDragging(false);
+        const file = e.dataTransfer.files?.[0];
+        processFile(file);
+      };
+
+      const processFile = (file) => {
+        if (!file) return;
+        if (file.type !== "text/csv" && !file.name.endsWith(".csv")) {
+          onError("Please upload a valid .csv file.");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          onFileLoaded(event.target?.result, file.name);
+        };
+        reader.onerror = () => onError("Error reading file.");
+        reader.readAsText(file);
+      };
+
+      return (
+        <div 
+          className={`border-2 border-dashed rounded-xl p-10 text-center transition-colors cursor-pointer bg-white group ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-slate-300 hover:bg-slate-50'}`}
+          onClick={() => fileInputRef.current?.click()}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          <input type="file" accept=".csv" className="hidden" ref={fileInputRef} onChange={handleFileChange} />
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <div className={`p-4 rounded-full transition-transform ${isDragging ? 'scale-110 bg-blue-200' : 'bg-blue-100 group-hover:scale-110'}`}>
+              <Upload className={`w-8 h-8 ${isDragging ? 'text-blue-700' : 'text-blue-600'}`} />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-800">Upload CSV Data</h3>
+              <p className="text-slate-500 text-sm mt-1">Click to browse or drag file here</p>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const DataPreview = ({ rawData, fileName, hasHeader, setHasHeader, targetCol, setTargetCol, taskType, setTaskType }) => {
+      const columns = hasHeader ? rawData[0] : rawData[0]?.map((_, i) => `Column ${i}`);
+      const previewRows = hasHeader ? rawData.slice(1, 6) : rawData.slice(0, 5);
+
+      return (
+        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden fade-in">
+          <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Table className="w-5 h-5 text-slate-500" />
+              <span className="font-semibold text-slate-700">{fileName} - Preview</span>
+            </div>
+            <div className="text-xs text-slate-400">First 5 rows</div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-slate-100 text-slate-600">
+                <tr>
+                  {columns.map((col, idx) => (
+                    <th key={idx} className={`px-4 py-3 font-medium whitespace-nowrap ${col === targetCol ? 'bg-blue-100 text-blue-700' : ''}`}>
+                      {col}
+                      {col === targetCol && <span className="ml-2 text-xs bg-blue-600 text-white px-1.5 py-0.5 rounded">Target</span>}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {previewRows.map((row, rIdx) => (
+                  <tr key={rIdx} className="border-b border-slate-100 hover:bg-slate-50">
+                    {row.map((cell, cIdx) => (
+                      <td key={cIdx} className="px-4 py-2.5 text-slate-600 whitespace-nowrap">{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="p-6 bg-slate-50 border-t border-slate-200 space-y-6">
+            <div className="flex items-center space-x-2 text-slate-800 font-semibold mb-2">
+              <Settings className="w-5 h-5" />
+              <h3>Configuration</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-slate-700">CSV Structure</label>
+                <div className="flex items-center space-x-3">
+                  <button
+                    onClick={() => setHasHeader(!hasHeader)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      hasHeader ? 'bg-blue-600 text-white shadow-md shadow-blue-200' : 'bg-white border border-slate-300 text-slate-600'
+                    }`}
+                  >
+                    {hasHeader ? 'Has Header Row' : 'No Header Row'}
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-slate-700">Target Column</label>
+                <select
+                  value={targetCol}
+                  onChange={(e) => setTargetCol(e.target.value)}
+                  className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  {columns.map((col) => <option key={col} value={col}>{col}</option>)}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-slate-700">Task Type</label>
+                <div className="flex p-1 bg-white border border-slate-300 rounded-lg">
+                  <button onClick={() => setTaskType(TaskType.REGRESSION)} className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${taskType === TaskType.REGRESSION ? 'bg-blue-100 text-blue-700' : 'text-slate-500'}`}>Regression</button>
+                  <button onClick={() => setTaskType(TaskType.CLASSIFICATION)} className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${taskType === TaskType.CLASSIFICATION ? 'bg-purple-100 text-purple-700' : 'text-slate-500'}`}>Classification</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const StatsDisplay = ({ stats, onClose }) => {
+      // stats.description is an object where keys are column names, and values are objects of metrics (count, mean, etc.)
+      const columns = Object.keys(stats);
+      if (columns.length === 0) return null;
+
+      // Get all available metrics (rows) from the first column
+      const metrics = Object.keys(stats[columns[0]]);
+      
+      // Formatting helper
+      const formatVal = (val) => {
+        if (typeof val === 'number') {
+            return Number.isInteger(val) ? val : val.toFixed(2);
+        }
+        return val || '-';
+      };
+
+      return (
+        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden fade-in relative">
+           <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+            <h3 className="text-lg font-bold text-slate-800">Descriptive Statistics</h3>
+            <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+                <X className="w-5 h-5" />
+            </button>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+                <thead className="bg-slate-100 text-slate-600 font-semibold">
+                    <tr>
+                        <th className="px-4 py-3 sticky left-0 bg-slate-100 border-r border-slate-200">Metric</th>
+                        {columns.map(col => (
+                            <th key={col} className="px-4 py-3 whitespace-nowrap">{col}</th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                    {metrics.map((metric, idx) => (
+                        <tr key={metric} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                            <td className="px-4 py-2 font-medium text-slate-700 sticky left-0 bg-inherit border-r border-slate-200">{metric}</td>
+                            {columns.map(col => (
+                                <td key={`${col}-${metric}`} className="px-4 py-2 text-slate-600 whitespace-nowrap">
+                                    {formatVal(stats[col][metric])}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
+
+    const ConfusionMatrix = ({ matrix, classes }) => {
+        return (
+            <div className="flex flex-col items-center">
+                <h4 className="text-sm font-semibold text-slate-600 mb-4">Confusion Matrix</h4>
+                <div className="overflow-auto max-w-full border border-slate-200 rounded-lg">
+                    <table className="text-sm text-center">
+                        <thead>
+                            <tr>
+                                <th className="p-2 bg-slate-100 border-b border-r border-slate-200 text-xs text-slate-500">Actual \ Pred</th>
+                                {classes.map((cls, i) => (
+                                    <th key={i} className="p-2 bg-slate-50 border-b border-slate-200 min-w-[60px]">{cls}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {matrix.map((row, i) => (
+                                <tr key={i}>
+                                    <td className="p-2 bg-slate-50 border-r border-slate-200 font-medium">{classes[i]}</td>
+                                    {row.map((val, j) => (
+                                        <td key={j} className={`p-2 border-slate-100 border ${i === j ? 'bg-blue-50 font-bold text-blue-700' : 'text-slate-500'}`}>
+                                            {val}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        )
+    }
+
+    const Results = ({ result, taskType, modelName }) => {
+      const isReg = taskType === TaskType.REGRESSION;
+      
+      return (
+        <div className="space-y-6 fade-in">
+          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+            <h3 className="text-lg font-bold text-slate-800 mb-4">Results: {modelName}</h3>
+            
+            {/* Metric Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {isReg ? (
+                <>
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <span className="text-sm text-blue-600 font-medium">R² Score</span>
+                    <div className="text-2xl font-bold text-blue-900">{result.r2?.toFixed(4)}</div>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <span className="text-sm text-slate-600 font-medium">Mean Squared Error (MSE)</span>
+                    <div className="text-2xl font-bold text-slate-900">{result.mse?.toFixed(4)}</div>
+                  </div>
+                </>
+              ) : (
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-100 col-span-2 flex items-center justify-between">
+                    <div>
+                        <span className="text-sm text-purple-600 font-medium">Accuracy</span>
+                        <div className="text-2xl font-bold text-purple-900">{(result.accuracy * 100).toFixed(2)}%</div>
+                    </div>
+                </div>
+              )}
+            </div>
+
+            {/* Visualizations */}
+            <div className={`grid grid-cols-1 ${isReg ? 'lg:grid-cols-2' : ''} gap-8`}>
+                {/* Chart Section - Only displayed for Regression */}
+                {isReg && (
+                  <div className="h-80 w-full">
+                  <h4 className="text-sm font-semibold text-slate-600 mb-4">
+                      Actual vs Predicted
+                  </h4>
+                  <ResponsiveContainer width="100%" height="100%">
+                      <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis type="number" dataKey="actual" name="Actual" label={{ value: 'Actual', position: 'insideBottom', offset: -10 }} />
+                          <YAxis type="number" dataKey="predicted" name="Predicted" label={{ value: 'Predicted', angle: -90, position: 'insideLeft' }} />
+                          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                          <Scatter name="Predictions" data={result.predictions} fill="#2563eb" />
+                      </ScatterChart>
+                  </ResponsiveContainer>
+                  </div>
+                )}
+
+                {/* Additional Details Section (Confusion Matrix or Table) */}
+                <div className={`space-y-4 ${!isReg ? 'max-w-3xl mx-auto w-full' : ''}`}>
+                    {!isReg && result.confusion_matrix && (
+                        <ConfusionMatrix matrix={result.confusion_matrix} classes={result.classes} />
+                    )}
+                    
+                    {/* Prediction Table */}
+                    <div className="border rounded-lg overflow-hidden border-slate-200">
+                        <div className="bg-slate-100 px-4 py-2 border-b border-slate-200 font-semibold text-xs text-slate-500 uppercase">
+                            Recent Test Samples
+                        </div>
+                        <div className="max-h-60 overflow-y-auto">
+                            <table className="w-full text-sm text-left">
+                                <thead className="bg-slate-50 text-slate-600 sticky top-0">
+                                    <tr>
+                                        <th className="px-4 py-2">Actual</th>
+                                        <th className="px-4 py-2">Predicted</th>
+                                        {!isReg && <th className="px-4 py-2 text-right">Status</th>}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {result.predictions.slice(0, 20).map((row, idx) => {
+                                        const isCorrect = row.actual == row.predicted;
+                                        return (
+                                            <tr key={idx} className="border-b border-slate-100 last:border-0 hover:bg-slate-50">
+                                                <td className="px-4 py-2 font-mono text-slate-600">{String(row.actual)}</td>
+                                                <td className="px-4 py-2 font-mono text-blue-600 font-medium">{String(row.predicted)}</td>
+                                                {!isReg && (
+                                                    <td className="px-4 py-2 text-right">
+                                                        {isCorrect ? (
+                                                            <CheckCircle2 className="w-4 h-4 text-green-500 inline-block" />
+                                                        ) : (
+                                                            <XCircle className="w-4 h-4 text-red-500 inline-block" />
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const App = () => {
+      const [pythonReady, setPythonReady] = useState(false);
+      const [pythonError, setPythonError] = useState(null);
+      
+      const [csvContent, setCsvContent] = useState(null);
+      const [fileName, setFileName] = useState("");
+      const [parsedData, setParsedData] = useState([]);
+      const [error, setError] = useState(null);
+
+      const [hasHeader, setHasHeader] = useState(true);
+      const [targetCol, setTargetCol] = useState("");
+      const [taskType, setTaskType] = useState(TaskType.REGRESSION);
+
+      const [isTraining, setIsTraining] = useState(false);
+      const [result, setResult] = useState(null);
+      const [selectedModel, setSelectedModel] = useState("");
+      const [stats, setStats] = useState(null);
+
+      useEffect(() => {
+        const initPython = async () => {
+          try {
+            await pythonService.init();
+            setPythonReady(true);
+          } catch (e) {
+            setPythonError("Failed to initialize Python environment. Please refresh.");
+          }
+        };
+        initPython();
+      }, []);
+
+      const handleFileLoaded = (content, name) => {
+        setCsvContent(content);
+        setFileName(name);
+        setError(null);
+        setResult(null);
+        setStats(null);
+
+        Papa.parse(content, {
+          preview: 10,
+          complete: (results) => {
+            if (results.data && results.data.length > 0) {
+              const data = results.data;
+              setParsedData(data);
+              const headers = data[0];
+              if (headers.length > 0) {
+                setTargetCol(headers[headers.length - 1]);
+                if (data.length > 1) {
+                  const sampleVal = data[1][data[1].length - 1];
+                  const isNumber = !isNaN(parseFloat(sampleVal));
+                  setTaskType(isNumber ? TaskType.REGRESSION : TaskType.CLASSIFICATION);
+                }
+              }
+            }
+          },
+          error: (err) => setError(err.message)
+        });
+      };
+
+      const handleRunStats = async () => {
+        if (!csvContent) return;
+        setIsTraining(true);
+        setError(null);
+        try {
+          const statsJson = await pythonService.getDescriptiveStats(csvContent, hasHeader);
+          if (statsJson.error) throw new Error(statsJson.error);
+          setStats(statsJson.description);
+        } catch (e) {
+          setError(e.message || "Error calculating stats");
+        } finally {
+          setIsTraining(false);
+        }
+      };
+
+      const handleTrain = async (model) => {
+        if (!csvContent) return;
+        setIsTraining(true);
+        setResult(null);
+        setSelectedModel(model);
+        setError(null);
+        // NOTE: We do NOT clear stats here, allowing user to keep them open
+
+        try {
+          const res = await pythonService.runTraining(csvContent, hasHeader, targetCol, taskType, model);
+          setResult(res);
+        } catch (e) {
+          setError(e.message || "Training failed");
+        } finally {
+          setIsTraining(false);
+        }
+      };
+
+      const regressionModels = [MLModel.LINEAR_REGRESSION, MLModel.SVR, MLModel.DECISION_TREE_REG];
+      const classificationModels = [MLModel.LOGISTIC_REGRESSION, MLModel.SVC, MLModel.RANDOM_FOREST_CLF];
+
+      return (
+        <div className="min-h-screen bg-slate-50 pb-20">
+          <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+            <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="bg-blue-600 p-2 rounded-lg">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h1 className="text-xl font-bold text-slate-900 tracking-tight">AutoML Lite</h1>
+              </div>
+              <div className="flex items-center space-x-4 text-sm">
+                {!pythonReady && !pythonError && (
+                   <div className="flex items-center text-amber-600 bg-amber-50 px-3 py-1 rounded-full">
+                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                     Initializing Python Engine...
+                   </div>
+                )}
+                {pythonReady && (
+                  <div className="flex items-center text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+                    Python Ready
+                  </div>
+                )}
+              </div>
+            </div>
+          </header>
+
+          <main className="max-w-5xl mx-auto px-6 py-8 space-y-8">
+            {pythonError && (
+              <div className="bg-red-50 text-red-700 p-4 rounded-xl border border-red-200 flex items-center">
+                <AlertTriangle className="w-5 h-5 mr-3" />
+                {pythonError}
+              </div>
+            )}
+
+            {!csvContent && (
+              <div className="fade-in">
+                 <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold text-slate-800 mb-2">Train ML Models in your Browser</h2>
+                    <p className="text-slate-500">Secure, local processing using Python. No data leaves your device.</p>
+                 </div>
+                 <FileUpload onFileLoaded={handleFileLoaded} onError={setError} />
+              </div>
+            )}
+
+            {csvContent && parsedData.length > 0 && (
+              <div className="space-y-8 fade-in">
+                 <div className="flex justify-between items-center">
+                   <h2 className="text-xl font-bold text-slate-800">Data Setup</h2>
+                   <button 
+                     onClick={() => { setCsvContent(null); setParsedData([]); setResult(null); }}
+                     className="text-sm text-slate-500 hover:text-slate-800 flex items-center"
+                   >
+                     <RefreshCcw className="w-4 h-4 mr-1"/> Reset
+                   </button>
+                 </div>
+
+                 <DataPreview 
+                   rawData={parsedData}
+                   fileName={fileName}
+                   hasHeader={hasHeader}
+                   setHasHeader={setHasHeader}
+                   targetCol={targetCol}
+                   setTargetCol={setTargetCol}
+                   taskType={taskType}
+                   setTaskType={setTaskType}
+                 />
+
+                 <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div className="flex items-center space-x-2 mb-6">
+                      <Play className="w-5 h-5 text-slate-800" />
+                      <h3 className="text-lg font-bold text-slate-800">Operations</h3>
+                    </div>
+
+                    {error && (
+                      <div className="mb-6 bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100 flex items-center">
+                        <AlertTriangle className="w-4 h-4 mr-2" />
+                        {error}
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                       <button
+                         disabled={!pythonReady || isTraining}
+                         onClick={handleRunStats}
+                         className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-colors disabled:opacity-50
+                            ${stats ? 'bg-blue-100 text-blue-800 border-2 border-blue-200' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}
+                         `}
+                       >
+                         {isTraining && !selectedModel ? <Loader2 className="w-4 h-4 animate-spin"/> : <BarChart2 className="w-4 h-4" />}
+                         <span>Descriptive Stats</span>
+                       </button>
+
+                       {(taskType === TaskType.REGRESSION ? regressionModels : classificationModels).map(model => (
+                          <button
+                            key={model}
+                            disabled={!pythonReady || isTraining}
+                            onClick={() => handleTrain(model)}
+                            className={`
+                              flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-colors border shadow-sm
+                              disabled:opacity-50 disabled:cursor-not-allowed
+                              ${selectedModel === model && isTraining 
+                                ? 'bg-blue-600 text-white border-blue-600' 
+                                : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:text-blue-600'}
+                            `}
+                          >
+                             {selectedModel === model && isTraining && <Loader2 className="w-4 h-4 animate-spin"/>}
+                             <span>{model}</span>
+                          </button>
+                       ))}
+                    </div>
+                 </div>
+
+                 {stats && <StatsDisplay stats={stats} onClose={() => setStats(null)} />}
+
+                 {result && (
+                   <Results result={result} taskType={taskType} modelName={selectedModel} />
+                 )}
+              </div>
+            )}
+          </main>
+        </div>
+      );
+    };
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

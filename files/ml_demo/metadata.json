@@ -1,0 +1,5 @@
+{
+  "name": "AutoML Lite",
+  "description": "A browser-based machine learning tool that runs Python locally to train models on your CSV data.",
+  "requestFramePermissions": []
+}
