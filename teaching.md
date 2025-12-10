@@ -11,7 +11,11 @@ slug: /file
     <ul>
       <li>
         <img src="/assets/img/cm.jpg" alt="CM icon">
-        <strong>Machine Learning</strong> — 22h, Centrale Méditerranée
+        <strong>Machine Learning</strong> — 22h, Centrale Méditerranée, Spring
+      </li>
+      <li>
+        <img src="/assets/img/cm.jpg" alt="CM icon">
+        <strong>Machine Learning</strong> — 22h, Centrale Méditerranée, Fall
       </li>
     </ul>
   </div>
@@ -21,11 +25,11 @@ slug: /file
     <ul>
       <li>
         <img src="/assets/img/cm.jpg" alt="CM icon">
-        <strong>Mathematics for AI</strong> — 24h, Centrale Méditerranée
+        <strong>Mathematics for AI</strong> — 24h, Centrale Méditerranée, Spring
       </li>
       <li>
         <img src="/assets/img/stn.jpg" alt="PNS icon">
-        <strong>Introduction to Research (TD)</strong> — 20h, Polytech Nice Sophia
+        <strong>Introduction to Research (TD)</strong> — 20h, Polytech Nice Sophia, Fall
       </li>
     </ul>
   </div>
@@ -35,7 +39,7 @@ slug: /file
     <ul>
       <li>
         <img src="/assets/img/cm.jpg" alt="CM icon">
-        <strong>Mathematics for AI</strong> — 15h, Centrale Méditerranée
+        <strong>Mathematics for AI</strong> — 15h, Centrale Méditerranée, Spring
       </li>
     </ul>
   </div>
