@@ -1,0 +1,5 @@
+{
+  "name": "OmniPDF",
+  "description": "A serverless, client-side PDF tool suite supporting conversion, merging, splitting, and reordering with a modern bilingual interface.",
+  "requestFramePermissions": []
+}
