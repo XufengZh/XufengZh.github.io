@@ -58,16 +58,5 @@ p {
   font-size: 1em;
 }
 
-/* 链接样式 */
-a {
-  color: #4b90e7;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-a:hover {
-  border-color: #4b90e7;
-}
 
 </style>

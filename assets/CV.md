@@ -103,16 +103,6 @@ layout: defaultCV
   font-weight: 600;
 }
 
-/* === 链接 === */
-a {
-  color: #4b90e7;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-a:hover {
-  border-color: #4b90e7;
-}
 
 /* === 顶部 Email === */
 .cv-container > p:first-child {
