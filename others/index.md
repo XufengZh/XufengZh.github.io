@@ -26,7 +26,7 @@ slug: /others
         </div>
       </div>
 
-      <!-- Right-side image (30%) -->
+      <!-- Right-side image -->
       <div class="res-media res-media--omnipdf" aria-hidden="true"></div>
     </div>
 
@@ -34,7 +34,7 @@ slug: /others
 </div>
 
 <style>
-/* Container: align with Publications style */
+/* Container */
 .res-section{
   max-width: 720px;
   margin: 60px auto;
@@ -58,7 +58,7 @@ slug: /others
   line-height: 1.7;
 }
 
-/* Stack list */
+/* List */
 .res-list{
   display: flex;
   flex-direction: column;
@@ -70,8 +70,13 @@ slug: /others
   position: relative;
   display: grid;
 
-  /* 关键修复：第二列允许收缩，避免挤压导致掉行/撑高 */
-  grid-template-columns: 1fr minmax(0, 30%);
+  /*
+    关键：使用 clamp 让图片列随着窗口变窄逐步变小：
+    - 最大占比：30%
+    - 理想宽度：26vw（随视口缩小）
+    - 最小宽度：120px（再小就不值得显示了）
+  */
+  grid-template-columns: 1fr minmax(0, clamp(120px, 26vw, 30%));
   gap: 16px;
 
   background: var(--card);
@@ -83,7 +88,7 @@ slug: /others
   overflow: hidden;
 }
 
-/* 删除卡片内多余灰色框线：禁用 stacked papers */
+/* Remove stacked papers lines */
 .res-item::before,
 .res-item::after{
   content: none !important;
@@ -99,7 +104,7 @@ slug: /others
 .res-content{
   position: relative;
   z-index: 2;
-  min-width: 0; /* 避免内容把 grid 撑开 */
+  min-width: 0;
 }
 
 .res-title{
@@ -116,7 +121,6 @@ slug: /others
   line-height: 1.55;
 }
 
-/* Footer */
 .res-foot{
   margin-top: 14px;
 }
@@ -135,7 +139,7 @@ slug: /others
   border: 1px solid transparent;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
 
-  /* 不让链接内元素另起一行（保持单行） */
+  /* Keep single line */
   white-space: nowrap;
   flex-wrap: nowrap;
 }
@@ -146,58 +150,76 @@ slug: /others
   transform: translateY(-1px);
 }
 
-/* Right-side media block */
+/* Right media */
 .res-media{
   position: relative;
   z-index: 1;
   border-radius: 14px;
   overflow: hidden;
 
-  /* 关键修复：允许该列在变窄时真正缩小 */
   min-width: 0;
 
-  /* 图片不透明、不模糊，并保持等比缩放 */
   opacity: 1;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
+  /*
+    渐隐/渐缩过渡（用于断点附近更顺滑）
+    注：真正“随着窗口变化连续变化”主要由 clamp 完成；
+        transition 用来让断点切换更柔和。
+  */
+  transition: opacity .2s ease, transform .2s ease;
+  transform-origin: center;
 }
 
-/* Example image mapping (change to your own path) */
+/* Image mapping */
 .res-media--omnipdf{
   background-image: url("/assets/others/pdf.png");
 }
 
-/* 取消渐变遮罩与 blur（原先的 fade/blur） */
+/* Remove blur overlay */
 .res-media::after{
   content: none !important;
 }
 
 /*
-  桌面端“窗口拖窄但还没到手机断点”的区间：
-  直接隐藏右侧图片，避免出现掉到第二行并居中的问题。
-  这里的阈值你可以按实际观感微调（比如 900/840/800）。
+  逐渐消失策略（不突然消失）：
+  - 在接近最低可用宽度前，先降低透明度并缩放
+  - 进入更窄区间后，再彻底隐藏，避免布局抖动/掉行
 */
-@media (max-width: 900px){
-  .res-item{
-    grid-template-columns: 1fr; /* 单列更稳定 */
-  }
+@media (max-width: 560px){
   .res-media{
-    display: none;
+    opacity: .75;
+    transform: scale(.92);
+  }
+}
+@media (max-width: 520px){
+  .res-media{
+    opacity: .55;
+    transform: scale(.85);
+  }
+}
+@media (max-width: 480px){
+  .res-media{
+    opacity: .35;
+    transform: scale(.78);
   }
 }
 
-/* Mobile: stack（保留；此时图片已隐藏，不影响） */
-@media (max-width: 720px){
+/* 最低限：隐藏（此时已基本不可见，效果不会“突然”） */
+@media (max-width: 440px){
   .res-item{
     grid-template-columns: 1fr;
   }
   .res-media{
-    display: none;
+    opacity: 0;
+    transform: scale(.7);
+    pointer-events: none;
   }
 }
 
-/* 极端情况下（可选，保留无害） */
+/* 彻底移除占位，避免极窄时仍占空间 */
 @media (max-width: 420px){
   .res-media{
     display: none;
