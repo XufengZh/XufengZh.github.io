@@ -52,20 +52,6 @@ slug: /others
   --accent-soft: rgba(75,144,231,.18);
 }
 
-@media (prefers-color-scheme: dark){
-  .res-section{
-    --bg: transparent;
-    --card: rgba(255,255,255,.06);
-    --text: rgba(255,255,255,.90);
-    --muted: rgba(255,255,255,.65);
-    --border: rgba(255,255,255,.10);
-    --shadow: 0 10px 26px rgba(0,0,0,.40);
-    --shadow-hover: 0 16px 36px rgba(0,0,0,.58);
-    --accent: #60a5fa;
-    --accent-soft: rgba(96,165,250,.22);
-  }
-}
-
 .res-intro{
   margin: 0 0 18px;
   color: var(--muted);
@@ -95,30 +81,10 @@ slug: /others
   overflow: hidden;
 }
 
-/* stacked papers */
+/* 1) 删除卡片内多余灰色框线：禁用 stacked papers */
 .res-item::before,
 .res-item::after{
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  height: 100%;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  z-index: -1;
-  opacity: .70;
-}
-
-.res-item::before{
-  top: 8px;
-  transform: rotate(-0.35deg);
-}
-
-.res-item::after{
-  top: 16px;
-  transform: rotate(0.35deg);
-  opacity: .50;
+  content: none !important;
 }
 
 .res-item:hover{
@@ -166,6 +132,10 @@ slug: /others
   background: transparent;
   border: 1px solid transparent;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
+
+  /* 4) 不让链接内元素另起一行（保持单行） */
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .res-link:hover{
@@ -181,9 +151,11 @@ slug: /others
   border-radius: 14px;
   overflow: hidden;
 
-  background-size: cover;
+  /* 2) 图片取消模糊和不透明，并确保缩放一致 */
+  opacity: 1;                 /* 取消透明 */
+  background-size: contain;   /* 等比缩小，避免裁切/变形 */
+  background-repeat: no-repeat;
   background-position: center;
-  opacity: .55;
 }
 
 /* Example image mapping (change to your own path) */
@@ -191,43 +163,25 @@ slug: /others
   background-image: url("/assets/others/pdf.png");
 }
 
-/*
-  Fade/blur: start blending roughly at card 70% position.
-  Because media occupies the last 30%, we fade from the left edge of the media.
-  Adjust 65% to move the blend boundary:
-  - smaller -> blend starts earlier (more fade)
-  - larger  -> blend starts later  (less fade)
-*/
+/* 2) 取消渐变遮罩与 blur（原先的 fade/blur） */
 .res-media::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0) 0%,
-    var(--card) 65%,
-    var(--card) 100%
-  );
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  content: none !important;
 }
 
-/* Mobile: stack */
+/* 3) Mobile: stack（窗口布局变化时图片跟随缩小） */
 @media (max-width: 720px){
   .res-item{
     grid-template-columns: 1fr;
   }
   .res-media{
-    height: 140px;
-    opacity: .50;
+    height: 140px;  /* 给一个稳定高度展示缩略图 */
   }
-  .res-media::after{
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0) 0%,
-      var(--card) 70%,
-      var(--card) 100%
-    );
+}
+
+/* 3) 极端情况下直接隐藏图片 */
+@media (max-width: 420px){
+  .res-media{
+    display: none;
   }
 }
 </style>
