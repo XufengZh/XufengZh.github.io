@@ -69,7 +69,9 @@ slug: /others
 .res-item{
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 30%;
+
+  /* 关键修复：第二列允许收缩，避免挤压导致掉行/撑高 */
+  grid-template-columns: 1fr minmax(0, 30%);
   gap: 16px;
 
   background: var(--card);
@@ -81,7 +83,7 @@ slug: /others
   overflow: hidden;
 }
 
-/* 1) 删除卡片内多余灰色框线：禁用 stacked papers */
+/* 删除卡片内多余灰色框线：禁用 stacked papers */
 .res-item::before,
 .res-item::after{
   content: none !important;
@@ -97,7 +99,7 @@ slug: /others
 .res-content{
   position: relative;
   z-index: 2;
-  min-width: 0;
+  min-width: 0; /* 避免内容把 grid 撑开 */
 }
 
 .res-title{
@@ -114,7 +116,7 @@ slug: /others
   line-height: 1.55;
 }
 
-/* Footer: keep link aligned with other text */
+/* Footer */
 .res-foot{
   margin-top: 14px;
 }
@@ -133,7 +135,7 @@ slug: /others
   border: 1px solid transparent;
   transition: background .2s ease, border-color .2s ease, transform .2s ease;
 
-  /* 4) 不让链接内元素另起一行（保持单行） */
+  /* 不让链接内元素另起一行（保持单行） */
   white-space: nowrap;
   flex-wrap: nowrap;
 }
@@ -151,9 +153,12 @@ slug: /others
   border-radius: 14px;
   overflow: hidden;
 
-  /* 2) 图片取消模糊和不透明，并确保缩放一致 */
-  opacity: 1;                 /* 取消透明 */
-  background-size: contain;   /* 等比缩小，避免裁切/变形 */
+  /* 关键修复：允许该列在变窄时真正缩小 */
+  min-width: 0;
+
+  /* 图片不透明、不模糊，并保持等比缩放 */
+  opacity: 1;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -163,22 +168,36 @@ slug: /others
   background-image: url("/assets/others/pdf.png");
 }
 
-/* 2) 取消渐变遮罩与 blur（原先的 fade/blur） */
+/* 取消渐变遮罩与 blur（原先的 fade/blur） */
 .res-media::after{
   content: none !important;
 }
 
-/* 3) Mobile: stack（窗口布局变化时图片跟随缩小） */
+/*
+  桌面端“窗口拖窄但还没到手机断点”的区间：
+  直接隐藏右侧图片，避免出现掉到第二行并居中的问题。
+  这里的阈值你可以按实际观感微调（比如 900/840/800）。
+*/
+@media (max-width: 900px){
+  .res-item{
+    grid-template-columns: 1fr; /* 单列更稳定 */
+  }
+  .res-media{
+    display: none;
+  }
+}
+
+/* Mobile: stack（保留；此时图片已隐藏，不影响） */
 @media (max-width: 720px){
   .res-item{
     grid-template-columns: 1fr;
   }
   .res-media{
-    height: 140px;  /* 给一个稳定高度展示缩略图 */
+    display: none;
   }
 }
 
-/* 3) 极端情况下直接隐藏图片 */
+/* 极端情况下（可选，保留无害） */
 @media (max-width: 420px){
   .res-media{
     display: none;
