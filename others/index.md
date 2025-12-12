@@ -1,63 +1,17 @@
 ---
-layout: Others
+layout: others
 title: Others
 slug: /others
 ---
 
 <div class="res-section">
-  <p class="res-intro">
+  <!--<p class="res-intro"> 
     Hi! Here are some of my collection of public resources, for convenience and sharing.
-    Please note that some documents are only available in Chinese.
-  </p>
+    Please note that some documents are only available in Chinese. */
+  </p> -->
 
   <div class="res-list">
-    <div class="res-item">
-      <div class="res-head">
-        <span class="res-index">1</span>
-        <div class="res-title-wrap">
-          <h3 class="res-title">统计学习课件（Statistical Learning - 李航）</h3>
-          <p class="res-meta">课件 / Slides（中文为主）</p>
-        </div>
-      </div>
-      <div class="res-foot">
-        <a class="res-link" href="https://xufeng.de/files/StatisticalLearningLH" target="_blank" rel="noopener">
-          xufeng.de/files/StatisticalLearningLH
-        </a>
-        <span class="res-tag">Slides</span>
-      </div>
-    </div>
 
-    <div class="res-item">
-      <div class="res-head">
-        <span class="res-index">2</span>
-        <div class="res-title-wrap">
-          <h3 class="res-title">MLxFinance</h3>
-          <p class="res-meta">Machine Learning × Finance（可能包含中英文）</p>
-        </div>
-      </div>
-      <div class="res-foot">
-        <a class="res-link" href="https://xufeng.de/files/MLxFinance" target="_blank" rel="noopener">
-          xufeng.de/files/MLxFinance
-        </a>
-        <span class="res-tag">Collection</span>
-      </div>
-    </div>
-
-    <div class="res-item">
-      <div class="res-head">
-        <span class="res-index">3</span>
-        <div class="res-title-wrap">
-          <h3 class="res-title">Bayesian Statistics</h3>
-          <p class="res-meta">贝叶斯统计相关资料</p>
-        </div>
-      </div>
-      <div class="res-foot">
-        <a class="res-link" href="https://xufeng.de/files/Bayesian" target="_blank" rel="noopener">
-          xufeng.de/files/Bayesian
-        </a>
-        <span class="res-tag">Notes</span>
-      </div>
-    </div>
 
     <div class="res-item">
       <div class="res-head">
@@ -68,46 +22,14 @@ slug: /others
         </div>
       </div>
       <div class="res-foot">
-        <a class="res-link" href="/omnipdf" target="_blank" rel="noopener">
-          xufeng.de/files/EcoStata
+        <a class="res-link" href="/others/omnipdf" target="_blank" rel="noopener">
+          Click here!
         </a>
         <span class="res-tag">Toolkit</span>
       </div>
     </div>
 
-    <div class="res-item">
-      <div class="res-head">
-        <span class="res-index">5</span>
-        <div class="res-title-wrap">
-          <h3 class="res-title">Deep Learning</h3>
-          <p class="res-meta">深度学习相关资料</p>
-        </div>
-      </div>
-      <div class="res-foot">
-        <a class="res-link" href="https://xufeng.de/files/deeplearning" target="_blank" rel="noopener">
-          xufeng.de/files/deeplearning
-        </a>
-        <span class="res-tag">Collection</span>
-      </div>
-    </div>
 
-    <div class="res-item">
-      <div class="res-head">
-        <span class="res-index">6</span>
-        <div class="res-title-wrap">
-          <h3 class="res-title">CV</h3>
-          <p class="res-meta">Curriculum Vitae（PDF）</p>
-        </div>
-      </div>
-      <div class="res-foot">
-        <a class="res-link" href="https://xufeng.de/files/cv_full_xufeng.pdf" target="_blank" rel="noopener">
-          xufeng.de/files/cv_full_xufeng.pdf
-        </a>
-        <span class="res-tag">PDF</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <style>
 /* Container: align with Publications style */
