@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xufeng Zhang</title>
+  <meta name="description" content="Personal profile of Xufeng Zhang, PhD student at Inria Sophia Antipolis, NEO team." />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style>
+    :root {
+      --text: #111;
+      --muted: #666;
+      --line: #e8e8e8;
+      --bg: #fff;
+      --max: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    a:hover {
+      color: var(--muted);
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .hero {
+      padding-bottom: 64px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand-mark img {
+      max-height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 150px;
+      gap: 32px;
+      align-items: start;
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 80px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 600;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-link img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      opacity: 0.78;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 48px;
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .content p {
+      max-width: 680px;
+      margin: 0 0 18px;
+    }
+
+    .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .item {
+      padding-bottom: 26px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .item-title {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .item-meta {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .teaching-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 12px;
+    }
+
+    .teaching-row:first-of-type {
+      margin-top: 0;
+    }
+
+    .teaching-row img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      border-radius: 6px;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .tool-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 120px;
+      gap: 20px;
+      align-items: center;
+      padding: 22px 0 0;
+    }
+
+    .tool-card img {
+      width: 120px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 48px 20px;
+      }
+
+      section {
+        display: block;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-pic {
+        width: 104px;
+        height: 104px;
+      }
+
+      .tool-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">Personal Profile</div>
+
+      <div class="hero-main">
+        <h1>Xufeng Zhang</h1>
+        <img class="profile-pic" src="/assets/img/profile-pic.png" alt="Xufeng Zhang profile picture" />
+      </div>
+
+      <div class="links">
+        <a class="icon-link" href="mailto:xufeng.zhang@inria.fr">
+          <img src="/assets/img/icons/email.png" alt="Email icon" />
+          xufeng.zhang@inria.fr
+        </a>
+        <span>06560, Valbonne, France</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <div class="content">
+        <p>
+          Xufeng Zhang is a PhD Student at Inria Sophia Antipolis, NEO team，
+        </p>
+        <p>
+          supervised by Giovanni Neglia and Sara Alouf.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Focus</h2>
+      <div class="content">
+        <div class="tags">
+          <span class="tag">Online Optimization</span>
+          <span class="tag">Caching Policies</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Teaching</h2>
+      <div class="content">
+        <div class="item">
+          <h3 class="item-title">2025–2026</h3>
+          <div class="teaching-row">
+            <img src="/assets/img/cm.jpg" alt="CM icon" />
+            <p><strong>Machine Learning</strong> — 22h, Centrale Méditerranée, Spring</p>
+          </div>
+          <div class="teaching-row">
+            <img src="/assets/img/cm.jpg" alt="CM icon" />
+            <p><strong>Machine Learning</strong> — 22h, Centrale Méditerranée, Fall</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3 class="item-title">2024–2025</h3>
+          <div class="teaching-row">
+            <img src="/assets/img/cm.jpg" alt="CM icon" />
+            <p><strong>Mathematics for AI</strong> — 24h, Centrale Méditerranée, Spring</p>
+          </div>
+          <div class="teaching-row">
+            <img src="/assets/img/stn.jpg" alt="PNS icon" />
+            <p><strong>Introduction to Research (TD)</strong> — 20h, Polytech Nice Sophia, Fall</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3 class="item-title">2023–2024</h3>
+          <div class="teaching-row">
+            <img src="/assets/img/cm.jpg" alt="CM icon" />
+            <p><strong>Mathematics for AI</strong> — 15h, Centrale Méditerranée, Spring</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <div class="content">
+
+        <div class="item">
+          <h3 class="item-title">Optimistic Online Caching with Switching Costs and Dynamic Batched Requests</h3>
+          <div class="item-meta">Mediterranean Artificial Intelligence and Networking Conference · 2026</div>
+          <p><strong>Authors:</strong> <u>X. Zhang</u>, G. Sun, F. Faticanti, S. Alouf, G. Neglia</p>
+        </div>
+
+        <div class="item">
+          <h3 class="item-title">Low-Complexity Online Learning for Caching</h3>
+          <div class="item-meta">Computer Networks, 111743 · 2025</div>
+          <p><strong>Authors:</strong> D. Carra, G. Neglia, <u>X. Zhang</u></p>
+        </div>
+
+        <div class="item">
+          <h3 class="item-title">Memory-efficient Online Caching Policies with Regret Guarantees</h3>
+          <div class="item-meta">IFIP NETWORKING · 2025</div>
+          <p><strong>Authors:</strong> <u>X. Zhang</u>, S. Alouf, G. Neglia</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>CV</h2>
+      <div class="content">
+        <p>
+          More details are available in the CV.
+        </p>
+        <a class="cv-link" href="/assets/Xufeng_cv.pdf">Download CV</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="content">
+        <p>
+          For inquiries or questions, please contact
+          <a href="mailto:xufeng.zhang@inria.fr">xufeng.zhang@inria.fr</a>.
+        </p>
+        <p>
+          Additional contact email: <a href="mailto:mail@xufeng.de">mail@xufeng.de</a>.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Xufeng Zhang · Last update in June, 2026
+    </footer>
+  </main>
+</body>
+</html>
